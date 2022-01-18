@@ -1,0 +1,61 @@
+$--primary-color: #f47920;
+$--primary-button: #075aff;
+$--primary-button-hover: #0053f7;
+$--primary-text-light: #075affbb;
+$--primary-text-dark: #0049dae0;
+// Background
+$--bg-primary-light: #eeeff8;
+$--bg-gray: #f8f8f8;
+$--subtitle-gray: #59636e;
+$--white: #fff;
+// media-queries
+$--breakpoint-sm: 576px;
+$--breakpoint-md: 768px;
+$--breakpoint-lg: 992px;
+$--breakpoint-xl: 1200px;
+// pixels
+$--max-page-width: 1250px;
+$--x-padding-page: 0 1.5rem;
+// other
+$--md-box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+
+@mixin flexCenter($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin primaryButton() {
+  width: auto;
+  color: $--white;
+  background: $--primary-button;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 10px 32px;
+  border: 1px solid $--primary-button;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out 0s,
+    border-color 0.1s ease-in-out 0s;
+
+  &:hover {
+    background-color: $--primary-button-hover;
+    border-color: $--primary-button-hover;
+  }
+}
+
+@mixin dollarSign {
+  &::before {
+    content: '$';
+    font-size: 10px;
+    vertical-align: super;
+  }
+}
+
+@mixin smIcon {
+  padding: 2.5px;
+  background-color: transparent;
+  border-color: transparent;
+}

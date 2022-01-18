@@ -1,0 +1,61 @@
+.first-look {
+  @include flexCenter(space-between, center);
+  margin: 3rem auto 3.5rem auto;
+  padding-left: 4rem;
+
+  div {
+    @include flexCenter(center, flex-start, column);
+    flex: 1;
+    min-width: max-content;
+
+    *:not(:last-child) {
+      line-height: 1.7;
+    }
+
+    h1 {
+      font-size: 2.85rem;
+      font-weight: 900;
+    }
+
+    h2 {
+      font-size: 2.15rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      &::after {
+        content: 'easy!';
+        color: $--primary-color;
+        margin-left: 0.5rem;
+      }
+    }
+
+    h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .buy-sell-buttons {
+      @include flexCenter(center, stretch);
+
+      button {
+        @include flexCenter();
+        @include primaryButton();
+        column-gap: 0.8rem;
+        margin-right: 0.5rem;
+        font-weight: 700;
+
+        i {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  img {
+    width: 55%;
+  }
+}
+
+.scroll-down {
+  width: 40px;
+}

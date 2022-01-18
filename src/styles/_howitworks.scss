@@ -1,0 +1,123 @@
+.how-it-works {
+  margin-top: 6rem;
+  text-align: center;
+
+  h1 {
+    position: relative;
+    font-size: 1.9rem;
+    margin-bottom: 1.7rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -35%;
+      left: 0;
+      right: 0;
+      width: 40px;
+      height: 3.5px;
+      margin: auto;
+      background-color: $--primary-color;
+    }
+  }
+
+  .MuiPaper-root {
+    min-width: 285px;
+    height: 285px;
+    margin: 0 0.8rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  p {
+    margin-top: 0.2rem;
+    font-size: 0.95rem;
+  }
+
+  .steps-container {
+    @include flexCenter(flex-start);
+    text-align: left;
+    overflow-x: hidden;
+
+    .buy-carousel,
+    .sell-carousel {
+      @include flexCenter();
+    }
+
+    picture {
+      @include flexCenter();
+
+      img {
+        width: 150px;
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.wrapper {
+  margin: 1rem auto 4rem auto;
+  font-family: 'Open Sans';
+
+  nav {
+    position: relative;
+    width: 250px;
+    display: flex;
+    margin: auto;
+
+    .toggle-buy,
+    .toggle-sell {
+      position: relative;
+      height: 100%;
+      width: 200px;
+      padding: 0.4rem 0;
+      cursor: pointer;
+      border-radius: 20px;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      z-index: 1;
+
+      i {
+        padding-right: 7px;
+      }
+
+      span {
+        color: $--primary-color;
+      }
+    }
+
+    .slider {
+      position: absolute;
+      height: 100%;
+      width: 50%;
+      left: 0;
+      bottom: 0;
+      z-index: 0;
+      background: $--primary-button;
+      transition: all 0.3s ease;
+    }
+  }
+  ::selection {
+    background-color: $--primary-button;
+  }
+  input[type='radio'] {
+    display: none;
+  }
+}
+
+#toggle-buy:checked ~ nav label.toggle-buy,
+#toggle-sell:checked ~ nav label.toggle-sell {
+  color: #fff;
+  span {
+    color: $--white;
+  }
+}
+
+#toggle-buy:checked ~ nav .slider {
+  left: 0%;
+  border-radius: 20px;
+}
+#toggle-sell:checked ~ nav .slider {
+  left: 50%;
+  border-radius: 20px;
+}

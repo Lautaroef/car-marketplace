@@ -1,0 +1,53 @@
+.infinite-navbar {
+  background-color: $--white;
+  nav {
+    @include flexCenter(space-between);
+    position: sticky;
+    padding: $--x-padding-page;
+    margin: auto auto 0.5rem auto;
+    max-width: ($--max-page-width + 300px);
+    box-shadow: 0 4px 15px -10px rgba(0, 0, 0, 27%);
+    // box-shadow: 0 4px 20px -10px rgb(0, 0, 0 / 27%);
+
+    img {
+      width: 135px;
+    }
+
+    ul {
+      @include flexCenter();
+      column-gap: 0.85rem;
+
+      li {
+        position: relative;
+      }
+      a {
+        display: block;
+        padding: 1.25rem 1.3rem;
+        border-bottom: 5px solid transparent;
+        transition: transform 0.2s ease-in-out;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          height: 5px;
+          background-color: $--primary-color;
+          transform-origin: right center;
+          transition: transform 0.2s ease-in-out;
+          transform: scaleX(0);
+        }
+        &:hover::after {
+          transform-origin: left center;
+          transform: scaleX(1);
+        }
+      }
+    }
+
+    // Register - Login
+    :last-child {
+      column-gap: 0rem;
+    }
+  }
+}

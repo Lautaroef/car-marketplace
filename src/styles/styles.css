@@ -1,0 +1,841 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;700;900&display=swap");
+.infinite-navbar {
+  background-color: #fff;
+}
+
+.infinite-navbar nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: -webkit-sticky;
+  position: sticky;
+  padding: 0 1.5rem;
+  margin: auto auto 0.5rem auto;
+  max-width: 1550px;
+  -webkit-box-shadow: 0 4px 15px -10px black;
+          box-shadow: 0 4px 15px -10px black;
+}
+
+.infinite-navbar nav img {
+  width: 135px;
+}
+
+.infinite-navbar nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 0.85rem;
+          column-gap: 0.85rem;
+}
+
+.infinite-navbar nav ul li {
+  position: relative;
+}
+
+.infinite-navbar nav ul a {
+  display: block;
+  padding: 1.25rem 1.3rem;
+  border-bottom: 5px solid transparent;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+.infinite-navbar nav ul a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 5px;
+  background-color: #f47920;
+  -webkit-transform-origin: right center;
+          transform-origin: right center;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+.infinite-navbar nav ul a:hover::after {
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.infinite-navbar nav :last-child {
+  -webkit-column-gap: 0rem;
+          column-gap: 0rem;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.first-look {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 3rem auto 3.5rem auto;
+  padding-left: 4rem;
+}
+
+.first-look div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+
+.first-look div *:not(:last-child) {
+  line-height: 1.7;
+}
+
+.first-look div h1 {
+  font-size: 2.85rem;
+  font-weight: 900;
+}
+
+.first-look div h2 {
+  font-size: 2.15rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.first-look div h2::after {
+  content: 'easy!';
+  color: #f47920;
+  margin-left: 0.5rem;
+}
+
+.first-look div h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.first-look div .buy-sell-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.first-look div .buy-sell-buttons button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: auto;
+  color: #fff;
+  background: #075aff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 10px 32px;
+  border: 1px solid #075aff;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: background-color 0.1s ease-in-out 0s, border-color 0.1s ease-in-out 0s;
+  transition: background-color 0.1s ease-in-out 0s, border-color 0.1s ease-in-out 0s;
+  -webkit-column-gap: 0.8rem;
+          column-gap: 0.8rem;
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+
+.first-look div .buy-sell-buttons button:hover {
+  background-color: #0053f7;
+  border-color: #0053f7;
+}
+
+.first-look div .buy-sell-buttons button i {
+  font-size: 1.4rem;
+}
+
+.first-look img {
+  width: 55%;
+}
+
+.scroll-down {
+  width: 40px;
+}
+
+.how-it-works {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.how-it-works h1 {
+  position: relative;
+  font-size: 1.9rem;
+  margin-bottom: 1.7rem;
+}
+
+.how-it-works h1::before {
+  content: '';
+  position: absolute;
+  top: -35%;
+  left: 0;
+  right: 0;
+  width: 40px;
+  height: 3.5px;
+  margin: auto;
+  background-color: #f47920;
+}
+
+.how-it-works .MuiPaper-root {
+  min-width: 285px;
+  height: 285px;
+  margin: 0 0.8rem;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.how-it-works p {
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
+}
+
+.how-it-works .steps-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: left;
+  overflow-x: hidden;
+}
+
+.how-it-works .steps-container .buy-carousel,
+.how-it-works .steps-container .sell-carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.how-it-works .steps-container picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.how-it-works .steps-container picture img {
+  width: 150px;
+}
+
+.how-it-works .steps-container img {
+  width: 100%;
+}
+
+.wrapper {
+  margin: 1rem auto 4rem auto;
+  font-family: 'Open Sans';
+}
+
+.wrapper nav {
+  position: relative;
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+}
+
+.wrapper nav .toggle-buy,
+.wrapper nav .toggle-sell {
+  position: relative;
+  height: 100%;
+  width: 200px;
+  padding: 0.4rem 0;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.wrapper nav .toggle-buy i,
+.wrapper nav .toggle-sell i {
+  padding-right: 7px;
+}
+
+.wrapper nav .toggle-buy span,
+.wrapper nav .toggle-sell span {
+  color: #f47920;
+}
+
+.wrapper nav .slider {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  background: #075aff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.wrapper ::-moz-selection {
+  background-color: #075aff;
+}
+
+.wrapper ::selection {
+  background-color: #075aff;
+}
+
+.wrapper input[type='radio'] {
+  display: none;
+}
+
+#toggle-buy:checked ~ nav label.toggle-buy,
+#toggle-sell:checked ~ nav label.toggle-sell {
+  color: #fff;
+}
+
+#toggle-buy:checked ~ nav label.toggle-buy span,
+#toggle-sell:checked ~ nav label.toggle-sell span {
+  color: #fff;
+}
+
+#toggle-buy:checked ~ nav .slider {
+  left: 0%;
+  border-radius: 20px;
+}
+
+#toggle-sell:checked ~ nav .slider {
+  left: 50%;
+  border-radius: 20px;
+}
+
+.buy-a-car .infinite-header {
+  position: relative;
+  background-color: #fff;
+}
+
+.buy-a-car .infinite-header::after {
+  content: '';
+  position: absolute;
+  top: 105%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 12px;
+  background: radial-gradient(ellipse at 50% -75%, rgba(45, 54, 62, 0.3), rgba(45, 54, 62, 0) 80%);
+}
+
+.buy-a-car .infinite-header .header {
+  padding: 1.25rem;
+  max-width: 1250px;
+  margin: auto auto 1.75rem auto;
+}
+
+.buy-a-car .infinite-header .header small {
+  color: #075aff;
+}
+
+.buy-a-car .infinite-header .header .title-marker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 0.6rem;
+          column-gap: 0.6rem;
+}
+
+.buy-a-car .infinite-header .header .title-marker i {
+  color: #075aff;
+}
+
+.buy-a-car .infinite-header .header form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.buy-a-car .infinite-header .header button {
+  padding: 2.5px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.buy-a-car .infinite-header .header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+  margin-top: 0.5rem;
+  color: #59636e;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.buy-a-car .infinite-header .header ul .MuiChip-filled {
+  background-color: #eeeff8;
+  font-weight: 600;
+}
+
+.buy-a-car .infinite-header .header ul i {
+  font-size: 1.05rem;
+  margin-left: 0rem;
+  color: #075affbb;
+}
+
+.buy-a-car .cars {
+  background-color: #f8f8f8;
+}
+
+.buy-a-car .cars main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  max-width: 1250px;
+  margin: auto;
+  padding: 1.25rem;
+}
+
+@media screen and (max-width: 576px) {
+  .buy-a-car .cars main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.buy-a-car .cars .filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+  width: 30%;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  -webkit-box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 576px) {
+  .buy-a-car .cars .filters {
+    width: 100%;
+  }
+}
+
+.buy-a-car .cars .filters > div {
+  padding: 1rem 1.25rem;
+}
+
+.buy-a-car .cars .filters .years {
+  margin-top: 0.75rem;
+}
+
+.buy-a-car .cars .filters .years,
+.buy-a-car .cars .filters .price {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'h3 h3' 'label label' 'div div';
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.buy-a-car .cars .filters .years h3,
+.buy-a-car .cars .filters .price h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: h3;
+  margin-bottom: 0.35rem;
+}
+
+.buy-a-car .cars .filters .years label,
+.buy-a-car .cars .filters .price label {
+  color: #59636e;
+  max-width: 100%;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.buy-a-car .cars .filters .makers > .quick-checkboxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.buy-a-car .cars .filters .makers > button {
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.buy-a-car .cars .cars-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  row-gap: 1rem;
+}
+
+.buy-a-car .cars .cars-list .single-car {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+  background-color: #eeeff8;
+}
+
+.buy-a-car .cars .cars-list .single-car img {
+  width: 275px;
+  max-width: 100%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+
+.buy-a-car .cars .cars-list .single-car .grid-info {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+      grid-template-areas: 'carName carName price' 'miles   miles   monthlyPay' 'hr      hr      hr' 'number  number  .' 'extras  extras  .';
+  -ms-grid-columns: 1fr 1fr max-content;
+      grid-template-columns: 1fr 1fr -webkit-max-content;
+      grid-template-columns: 1fr 1fr max-content;
+  -ms-grid-rows: 1fr 1fr 0.25fr 0.75fr 0.75fr;
+      grid-template-rows: 1fr 1fr 0.25fr 0.75fr 0.75fr;
+  row-gap: 0.75rem;
+  padding: 0.65rem 1rem;
+}
+
+.buy-a-car .cars .cars-list .single-car .grid-info h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: carName;
+}
+
+.buy-a-car .cars .cars-list .single-car .grid-info > span {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: price;
+  font-weight: 500;
+}
+
+.buy-a-car .cars .cars-list .single-car .grid-info > span::before {
+  content: '$';
+  font-size: 10px;
+  vertical-align: super;
+}
+
+.buy-a-car .cars .cars-list .single-car .grid-info b {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: miles;
+}
+
+.buy-a-car .cars .cars-list .single-car .grid-info .monthly-pay {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: monthlyPay;
+  color: #0049dae0;
+  font-weight: 500;
+}
+
+.buy-a-car .cars .cars-list .single-car .grid-info .monthly-pay::before {
+  content: '$';
+  font-size: 10px;
+  vertical-align: super;
+}
+
+.buy-a-car .cars .cars-list .single-car .grid-info hr {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: hr;
+}
+
+.buy-a-car .cars .cars-list .single-car .grid-info .availability {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: number;
+}
+
+.buy-a-car .cars .cars-list .single-car .grid-info ul {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: extras;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.buy-a-car .cars .cars-list .single-car .grid-info ul li {
+  font-size: 0.85rem;
+  color: #59636e;
+  margin-right: 0.85rem;
+}
+
+.MuiDialog-container > .MuiPaper-root {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  max-height: 700px;
+}
+
+.MuiFormControl-root > .MuiFormGroup-root {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (max-width: 576px) {
+  .MuiFormControl-root > .MuiFormGroup-root {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+nav *,
+button,
+h1,
+h2,
+h3 {
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  margin: auto;
+  max-width: 1250px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+/*# sourceMappingURL=styles.css.map */

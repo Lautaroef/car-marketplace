@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;900&display=swap');
+@import './variables';
+@import './header';
+@import './footer';
+@import './firstLook';
+@import './howitworks';
+@import './buySection';
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+nav *,
+button,
+h1,
+h2,
+h3 {
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  margin: auto;
+  max-width: $--max-page-width;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
