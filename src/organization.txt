@@ -1,3 +1,4 @@
+Start 11/02 finished and deployed 15/02
 - The UI will be done using Sass with MaterialUI.
 - The presentation is done in paper, the task is to replicate that.
 - Fonts => ¿Combination of Inter 900-600 and Open Sans?
@@ -65,17 +66,18 @@ How It Works: ✔️
 
 Plus:
 Best sellers cars: 
-  Next first impression will be displayed the most 4 sell cars
+  Next first impression will be displayed the most 4 sold out cars
   
 * Pages
 See all cars pages: ✔️
   Will have features like AutoTrader.com https://www.autotrader.com/cars-for-sale/all-cars/sedan/audi
   Because of the easy UI of filtering and displaying cars. 
 
-Single car Page: 
+Single car Page: ✔️
   Will be inspired in WeBuyCars https://www.webuycars.co.za/buy-a-car/B33403830
-  
-Sell a car: 
+  Also see nice implementations in 👉 https://www.olx.com.ar/item/golf-14-tsi-variant-iid-1115301877
+
+Sell a car: ✔️
   Will be inspired int AutoTrader https://www.autotrader.com/car-values/
 
 -------------------------------------
@@ -104,20 +106,20 @@ https://mui.com/components/slider/#customization
 //✔️ Select components input
 https://mui.com/components/text-fields/#select
 
-// Loader 
+// Loader ✔️
 https://mui.com/components/progress/#linear
-Skeleton
+Skeleton ✔️
 https://mui.com/components/skeleton/#variants
 
-// Pagination navigation with numbers
+// Pagination navigation with numbers ✔️
 https://mui.com/components/pagination/#basic-pagination
 
-// Password input with icon
+// Password input with icon ✔️
 https://mui.com/components/text-fields/#input-adornments
 
-// F.A.Q.
+// F.A.Q. ✔️
 https://mui.com/components/accordion/#customization
 
-// Social Links - Ball
+// Social Links - Ball ⏳︎
 https://mui-treasury.com/styles/social-link
 

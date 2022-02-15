@@ -3,17 +3,22 @@ require('dotenv').config();
 require('express-async-errors');
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 const connectDB = require('./db/connect');
-const buyACarRoute = require('./routes/buyACar');
-// components
+const buyACarRoute = require('./routes/cars');
 
-app.use(express.static('../public'));
-app.use(express.json());
+app.use(cors({ origin: 'http://localhost:3000' }));
+
+app.use('/public', express.static(__dirname + '../../public'));
+app.use('/api/cars/images', express.static(__dirname + '../../src/carImages'));
+
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // buy a car route
-app.use('/api', buyACarRoute);
+app.use('/api/cars', buyACarRoute);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

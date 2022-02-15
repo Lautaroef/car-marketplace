@@ -1,23 +1,35 @@
 $--primary-color: #f47920;
+$--primary-color-hover: #ef6b0c;
 $--primary-button: #075aff;
 $--primary-button-hover: #0053f7;
 $--primary-text-light: #075affbb;
 $--primary-text-dark: #0049dae0;
-// Background
-$--bg-primary-light: #eeeff8;
-$--bg-gray: #f8f8f8;
 $--subtitle-gray: #59636e;
+$--border-gray: #e1e4e8;
+$--success: #00b300;
+$--error: #cf0000;
+$--disabled: #b3bac4;
 $--white: #fff;
+// Background
+$--bg-gray: #72797e; //#666c71
+$--bg-light: #eeeff8;
+$--border-color: rgba(0, 0, 0, 0.5);
+$--bg-gray-light: #f8f8f8;
+$--bg-disabled: #e6ebf2;
+$--bg-input: #f3f4fa;
+// other
+$--borderRadiusInput: 4px;
+$--md-box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+$--lg-box-shadow: rgba(0, 0, 0, 0.14) 0px 12.8px 16px;
+$--max-page-width: 1250px;
+$--min-page-height: 80vh;
+$--x-padding-page: 0 1.5rem;
 // media-queries
 $--breakpoint-sm: 576px;
 $--breakpoint-md: 768px;
-$--breakpoint-lg: 992px;
+$--breakpoint-mdLg: 900px;
+$--breakpoint-lg: 1024px;
 $--breakpoint-xl: 1200px;
-// pixels
-$--max-page-width: 1250px;
-$--x-padding-page: 0 1.5rem;
-// other
-$--md-box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
 
 @mixin flexCenter($justify: center, $align: center, $direction: row) {
   display: flex;
@@ -26,24 +38,66 @@ $--md-box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
   flex-direction: $direction;
 }
 
-@mixin primaryButton() {
-  width: auto;
+@mixin titleAndUnderline() {
+  position: relative;
+  margin: 2.5rem auto 0 auto;
+  font-size: 2.15rem;
+  text-align: center;
+
+  &::after {
+    content: ' ';
+    display: block;
+    width: 100px;
+    height: 6px;
+    margin: 10px auto 0;
+
+    background-color: $--primary-color;
+    border-radius: 12px;
+  }
+}
+
+@mixin primaryButton(
+  $bgColor: $--primary-color,
+  $hover: $--primary-color-hover
+) {
   color: $--white;
-  background: $--primary-button;
+  background: $bgColor;
+  font-family: 'Open Sans', 'Inter', Arial;
   font-size: 1.3rem;
   font-weight: 700;
-  padding: 10px 32px;
-  border: 1px solid $--primary-button;
-  border-radius: 3px;
+  padding: 0.75rem 2.5rem;
+  border: 1px solid $bgColor;
+  border-radius: $--borderRadiusInput;
   outline: none;
   cursor: pointer;
   transition: background-color 0.1s ease-in-out 0s,
     border-color 0.1s ease-in-out 0s;
 
   &:hover {
-    background-color: $--primary-button-hover;
-    border-color: $--primary-button-hover;
+    background-color: $hover;
+    border-color: $hover;
   }
+
+  i {
+    margin-left: 1rem;
+    font-size: 1.65rem;
+  }
+}
+
+@mixin secondaryButton($--text: capitalize) {
+  flex: 1;
+  width: auto;
+  padding: 0.65rem 1rem;
+  min-width: 125px;
+  color: $--white;
+  background-color: $--bg-gray;
+  font-size: 0.8rem;
+  text-transform: $--text;
+  border: 1px solid $--bg-gray;
+  border-radius: $--borderRadiusInput;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out 0s,
+    border-color 0.1s ease-in-out 0s;
 }
 
 @mixin dollarSign {
@@ -54,8 +108,8 @@ $--md-box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
   }
 }
 
-@mixin smIcon {
-  padding: 2.5px;
+@mixin searchIcon {
+  padding-right: 2.5px;
   background-color: transparent;
   border-color: transparent;
 }

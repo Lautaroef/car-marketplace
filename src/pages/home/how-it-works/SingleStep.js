@@ -1,10 +1,10 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import CardContent from '@mui/material/CardContent';
 
-function SingleCard({ src, title, info, borderRadius }) {
+function SingleCard({ src, title, info, width, borderRadius }) {
   return (
     <Card>
       <picture>
@@ -12,7 +12,10 @@ function SingleCard({ src, title, info, borderRadius }) {
           component='img'
           image={src}
           alt={title}
-          style={{ borderRadius: borderRadius || '50px' }}
+          style={{
+            borderRadius: borderRadius || '50px',
+            width: width || '150px',
+          }}
         />
       </picture>
       <CardContent>

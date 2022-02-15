@@ -1,21 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-function ToggleButtons() {
-  const [showBuySteps, setShowBuySteps] = useState(true);
-
-  // useEffect(() => {
-  //   const stepsContainer = document.querySelector('.steps-container');
-  //   const buyButton = document.querySelector('#toggle-buy');
-  //   const sellButton = document.querySelector('#toggle-sell');
-
-  //   buyButton.addEventListener('click', (e) => {
-  //     const buySlide = stepsContainer.firstElementChild.style;
-  //     const sellSlide = buySlide.nextElementSibling;
-
-  //     console.log(buySlide);
-  //   });
-  // }, []);
-
+function ToggleButtons({ setShowBuySteps }) {
   return (
     <div className='wrapper'>
       <input

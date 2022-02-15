@@ -1,19 +1,17 @@
-// Setup the connection with the db
-// so i can handle CRUD operations
+// Setup the connection with the db so i can handle CRUD operations
 const mongoose = require('mongoose');
 const {
-  makers,
+  makersArray,
   yearsArray,
-} = require('../../src/pages/buy-section/filters/schema');
+} = require('../../src/pages/buy-car/filters/schema');
 
-// Define how i wanna receive the
-// info whenever a user want to make
-// a CRUD operation
+// Define how i wanna receive the info whenever a user
+// want to make a CRUD operation
 const carsSchema = new mongoose.Schema({
   // Build a validation system for every type info
   make: {
     type: String,
-    enum: makers,
+    enum: makersArray,
     trim: true,
     required: [true, "Please type the car's make"],
   },

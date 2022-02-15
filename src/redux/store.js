@@ -1,8 +1,38 @@
 import { configureStore } from '@reduxjs/toolkit';
-import carsSlice from './carsInfo/carsSlice';
+import { setupListeners } from '@reduxjs/toolkit/query';
+import { carsApi } from './carsInfo/carsApi';
+import loginSlice from './login/LoginSlice';
+import filtersSlice from './carsInfo/filtersSlice';
 
-export default configureStore({
+const store = configureStore({
   reducer: {
-    carsData: carsSlice,
+    loginValues: loginSlice,
+    filtersValues: filtersSlice,
+    [carsApi.reducerPath]: carsApi.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      // To escape 'non-serializable error' when login modal is opened :/
+      serializableCheck: {
+        ignoredActions: [
+          'login/openCloseModal',
+          'login/saveUserCredentials',
+          'cars/uploadImage/fulfilled',
+          'uploadImage.imageResponse',
+        ],
+      },
+    }).concat(carsApi.middleware),
 });
+
+// Save user credentials into localStorage
+store.subscribe(() => {
+  localStorage.setItem(
+    'userCredentials',
+    JSON.stringify(store.getState().loginValues.userCredentials)
+  );
+});
+
+// To able refetch on focus or refetch on reconnect etc.
+setupListeners(store.dispatch);
+
+export default store;

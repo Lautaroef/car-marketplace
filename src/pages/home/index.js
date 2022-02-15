@@ -1,13 +1,13 @@
 import React from 'react';
-import FirstLook from './first-look';
+import FirstLook from './first-impression';
 import HowItWorks from './how-it-works/HowItWorks';
 
 function index() {
   return (
-    <section>
+    <div>
       <FirstLook />
       <HowItWorks />
-    </section>
+    </div>
   );
 }
 
