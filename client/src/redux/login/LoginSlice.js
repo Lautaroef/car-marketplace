@@ -6,8 +6,8 @@ const persistedUserCredentials = loadState();
 const initialState = {
   isModalOpen: false,
   userCredentials: {
-    username: persistedUserCredentials?.username,
-    userIcon: persistedUserCredentials?.userIcon,
+    username: persistedUserCredentials?.username || '',
+    userIcon: persistedUserCredentials?.userIcon || '',
   },
 };
 
