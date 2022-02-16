@@ -9,10 +9,9 @@ const connectDB = require('./db/connect');
 const buyACarRoute = require('./routes/cars');
 require('dotenv').config();
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://rumrumcars-a9207.web.app'}));
 
 app.use('/public', express.static(__dirname + '../../public'));
-app.use('/api/cars/images', express.static(__dirname + '../../src/carImages'));
 
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
