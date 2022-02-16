@@ -1,5 +1,4 @@
 // express - db
-require('dotenv').config();
 require('express-async-errors');
 const express = require('express');
 const app = express();
@@ -8,6 +7,7 @@ const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 const connectDB = require('./db/connect');
 const buyACarRoute = require('./routes/cars');
+require('dotenv').config();
 
 app.use(cors({ origin: 'http://localhost:3000' }));
 
@@ -33,5 +33,4 @@ const start = async () => {
     console.log(error);
   }
 };
-
 start();

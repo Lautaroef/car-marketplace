@@ -1,9 +1,6 @@
 // Setup the connection with the db so i can handle CRUD operations
 const mongoose = require('mongoose');
-const {
-  makersArray,
-  yearsArray,
-} = require('../../src/pages/buy-car/filters/schema');
+const { makersArray, yearsArray } = require('./mySchemas');
 
 // Define how i wanna receive the info whenever a user
 // want to make a CRUD operation

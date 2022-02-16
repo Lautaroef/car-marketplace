@@ -10,7 +10,6 @@ function Main() {
 
   const handlePagination = (e, value) => {
     window.scrollTo(0, 0);
-    console.log(value);
     dispatch(selectedPage(value));
   };
 

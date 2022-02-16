@@ -2,7 +2,9 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const carsApi = createApi({
   reducerPath: 'cars',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/api/cars/' }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: 'https://rumrumcars.herokuapp.com/api/cars/',
+  }),
   keepUnusedDataFor: 90,
   refetchOnFocus: false,
   refetchOnReconnect: true,

@@ -4,7 +4,9 @@ const initialState = { imageSource: '', carImages: [] };
 
 export const getCarImages = createAsyncThunk('cars/getCarImages', async () => {
   try {
-    const response = await fetch('http://localhost:3001/api/cars/images');
+    const response = await fetch(
+      'https://rumrumcars.herokuapp.com/api/cars/images'
+    );
     const data = await response.json();
     return data;
   } catch (error) {

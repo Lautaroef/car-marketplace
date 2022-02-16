@@ -56,7 +56,7 @@ function Cars({ cars, nbCars, isLoading, setOpenFilterModal }) {
             {cars.length === 0 ? (
               <div className='no-cars-available'>
                 <div>
-                  <i class='fa fa-circle-info'></i>
+                  <i className='fa fa-circle-info'></i>
                   <div style={{ fontWeight: '800' }}>
                     We couldn't find cars that match your search criteria.
                   </div>

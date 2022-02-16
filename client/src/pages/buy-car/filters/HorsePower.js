@@ -22,13 +22,12 @@ export default function RangeSlider() {
       <h3>Horsepowers</h3>
       <Slider
         min={0}
-        step={20}
+        step={50}
         max={1100}
         disableSwap
         sx={{ mt: 5 }}
         value={horsepowers}
         valueLabelDisplay='on'
-        valueLabelDisplay='auto'
         getAriaLabel={() => 'Temperature range'}
         onChange={(e) => handleValues(e)}
       />

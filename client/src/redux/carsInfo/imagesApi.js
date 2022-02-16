@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const imagesApi = createApi({
   reducerPath: 'images',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3001/api/cars/images/',
+    baseUrl: 'https://rumrumcars.herokuapp.com/api/cars/images/',
   }),
   endpoints: (build) => ({
     getCarImages: build.query({
