@@ -1,10 +1,9 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import {REACT_APP_FIREBASE_AUTH_API_KEY, REACT_APP_FIREBASE_AUTH_DOMAIN} from './private-settings.js' 
 
 const firebaseConfig = {
-  apiKey: REACT_APP_FIREBASE_AUTH_API_KEY,
-  authDomain: REACT_APP_FIREBASE_AUTH_DOMAIN,
+  apiKey: 'AIzaSyBBIaNqjuu7QkTAMVDRHwzAutjjnHSOh3Q',
+  authDomain: 'rumrumcars-a9207.firebaseapp.com',
   projectId: process.env.FIREBASE_AUTH_PROJECT_ID,
   storageBucket: process.env.FIREBASE_AUTH_STORAGE_BUCKET,
   messagingSenderId: process.env.FIREBASE_AUTH_MESSAGING_SENDER_ID,
