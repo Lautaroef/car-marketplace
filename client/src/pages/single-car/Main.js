@@ -7,6 +7,8 @@ import {
 //Components
 import Car from './car/Main';
 import Paypal from './paypal/Main';
+import Button from '@mui/material/Button';
+import CircularProgress from '@mui/material/CircularProgress';
 
 function Main() {
   const [showPaymentMethods, setShowPaymentMethods] = useState(false);
@@ -18,8 +20,8 @@ function Main() {
     getCar(carID);
   }, []);
   const handleBuyCar = () => {
-    setShowPaymentMethods(!showPaymentMethods);
-    // deleteCar(carID);
+    // setShowPaymentMethods(!showPaymentMethods);
+    deleteCar(carID);
   };
 
   return (
@@ -36,12 +38,22 @@ function Main() {
             handleBuyCar={handleBuyCar}
             setShowPaymentMethods={setShowPaymentMethods}
           />
-          <Paypal
+          <Button
+            disableElevation
+            variant='contained'
+            className='buy-button'
+            disabled={isLoading}
+            onClick={handleBuyCar}
+          >
+            {isLoading ? <CircularProgress size='1.5rem' /> : 'Buy car'}
+          </Button>
+
+          {/* <Paypal
             carInfo={car}
             showPaymentMethods={showPaymentMethods}
             handleBuyCar={handleBuyCar}
             isLoading={isLoading}
-          />
+          /> */}
         </>
       )}
     </section>

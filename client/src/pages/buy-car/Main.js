@@ -36,7 +36,7 @@ function Main() {
   };
   let searchParams = new URLSearchParams(urlParams);
   history.push({
-    pathname: '/v1/buy-a-car',
+    pathname: '/buy-a-car',
     search: searchParams.toString(),
   });
   const queryString = history.location.search;
