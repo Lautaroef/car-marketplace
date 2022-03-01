@@ -14,11 +14,11 @@
 <br/><br/>
 </div>
 
-This website is my first one where i applied **Backend technologies** like MondoDB - Express - NodeJS.<br/>
+This website is my first one where i applied **Backend technologies** like MongoDB - Express - NodeJS.<br/>
 In the **Frontend development** i used React and Redux for the state.<br/>
 For **styling** and organizing all the CSS i choosed the Sass preprocessor. Also the MaterialUI library was used for some responsive components.
 
-**React hook form** was used to handle errors on the "sell a car" form and for the Firebase authentication.
+[**React hook form**](https://react-hook-form.com/ "React Hook Form website") was used to handle errors on the "Sell a Car" page and for the Firebase authentication form.
 
 ## Firebase
 I used the Firebase service to implement **User Authentication** on the website.<br/>
