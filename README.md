@@ -2,7 +2,6 @@
 
 ### Built using MERN Stack
 
----
 
 <div style="display: flex;">
 <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" alt="React" width=50 />
@@ -17,13 +16,9 @@
 
 This website is my first one where i applied **Backend technologies** like MondoDB - Express - NodeJS.<br/>
 In the **Frontend development** i used React and Redux for the state.<br/>
-For **styling** and organizing all the CSS i choosed the Sass preprocessor.
+For **styling** and organizing all the CSS i choosed the Sass preprocessor. Also the MaterialUI library was used for some responsive components.
 
 **React hook form** was used to handle errors on the "sell a car" form and for the Firebase authentication.
-
-<br/>
-The user can select a car which he likes most, he click on the "Buy this car" button and the delete method is triggered.<br/>
-Also the part i like the most is when you want to sell a car and all the process that is shown until the car is finally uploaded with all it's description and image.
 
 ## Firebase
 I used the Firebase service to implement **User Authentication** on the website.<br/>
@@ -33,3 +28,6 @@ Also **Firebase hosting** was used to... well.
 And for posting and receiving the car images i used [Cloudinary](https://cloudinary.com/ "Cloudinary website") service.
 > At first a system for posting and receiving images was made using only [Multer](https://github.com/expressjs/multer "Multer website") where the images were stored in a private file on my workspace, but i wanted to improve as this method has some cons in the long run.
 
+### About functionality
+The user can select a car which he likes most, he click on the "Buy this car" button and the delete method is triggered.<br/>
+Also the part i like the most is when you want to sell a car and all the process that is shown until the car is finally uploaded with all it's description and image.
