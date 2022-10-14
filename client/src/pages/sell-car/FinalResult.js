@@ -20,66 +20,69 @@ function FinalResult({ carFormInfo, previewSource }) {
     setExpanded(newExpanded ? panel : false);
   };
   const retailsValues = (numToMultiply) => {
-    return numberWithSeparator((price * numToMultiply).toFixed(0), '.');
+    numberWithSeparator((price * numToMultiply).toFixed(0), '.');
   };
 
-  <div className='final-result'>
-    <div>
-      <h2>
-        {year} {make} {model}
-      </h2>
-      <p>Estimated KBB Private Party Value</p>
-      <h1>${numberWithSeparator(price, '.')}</h1>
-      {previewSource && <img src={previewSource} alt={`${make}, ${model}`} />}
-      <div className='grid-estimated-values'>
-        <small>Trade-In Value</small>
-        <small>Retail Value</small>
-        <b>$ {retailsValues(0.96)}</b>
-        <b>$ {retailsValues(1.08)}</b>
+  return (
+    <div className='final-result'>
+      <div>
+        <h2>
+          {year} {make} {model}
+        </h2>
+        <p>Estimated KBB Private Party Value</p>
+        <h1>${numberWithSeparator(price, '.')}</h1>
+        {previewSource && <img src={previewSource} alt={`${make}, ${model}`} />}
+        <div className='grid-estimated-values'>
+          <small>Trade-In Value</small>
+          <small>Retail Value</small>
+          <b>$ {retailsValues(0.96)}</b>
+          <b>$ {retailsValues(1.08)}</b>
+        </div>
       </div>
+      <Accordion
+        expanded={expanded === 'panel1'}
+        onChange={handleChange('panel1')}
+      >
+        <AccordionSummary
+          aria-controls='panel1d-content'
+          id='panel1d-header'
+          expandIcon={
+            <i className='fas fa-chevron-down' style={{ fontSize: '0.9rem' }} />
+          }
+        >
+          <Typography>Car Details</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            <b>Horsepowers: {horsepower}</b>.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion
+        expanded={expanded === 'panel2'}
+        onChange={handleChange('panel2')}
+      >
+        <AccordionSummary
+          aria-controls='panel2d-content'
+          expandIcon={
+            <i className='fas fa-chevron-down' style={{ fontSize: '0.9rem' }} />
+          }
+          id='panel2d-header'
+        >
+          <Typography>Features</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+            auctor, dui vel sagittis lacinia, velit nibh porttitor elit, eu
+            facilisis eros nulla a nibh. Integer vulputate mauris in enim
+            vulputate sodales. Suspendisse egestas turpis quam, ac tempus ipsum
+            .
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
     </div>
-    <Accordion
-      expanded={expanded === 'panel1'}
-      onChange={handleChange('panel1')}
-    >
-      <AccordionSummary
-        aria-controls='panel1d-content'
-        id='panel1d-header'
-        expandIcon={
-          <i className='fas fa-chevron-down' style={{ fontSize: '0.9rem' }} />
-        }
-      >
-        <Typography>Car Details</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          <b>Horsepowers: {horsepower}</b>.
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
-    <Accordion
-      expanded={expanded === 'panel2'}
-      onChange={handleChange('panel2')}
-    >
-      <AccordionSummary
-        aria-controls='panel2d-content'
-        expandIcon={
-          <i className='fas fa-chevron-down' style={{ fontSize: '0.9rem' }} />
-        }
-        id='panel2d-header'
-      >
-        <Typography>Features</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor,
-          dui vel sagittis lacinia, velit nibh porttitor elit, eu facilisis eros
-          nulla a nibh. Integer vulputate mauris in enim vulputate sodales.
-          Suspendisse egestas turpis quam, ac tempus ipsum .
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
-  </div>;
+  );
 }
 
 export default FinalResult;
