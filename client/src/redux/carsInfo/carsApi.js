@@ -4,6 +4,7 @@ export const carsApi = createApi({
   reducerPath: 'cars',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://rumrumcars.herokuapp.com/api/cars/',
+    // baseUrl: 'http://localhost:3001/api/cars',
   }),
   keepUnusedDataFor: 90,
   refetchOnFocus: false,
@@ -31,12 +32,6 @@ export const carsApi = createApi({
         body,
       }),
     }),
-    // getCloudinaryImages: build.mutation({
-    //   query: () => ({
-    //     method: 'GET',
-    //     url: `/images`,
-    //   }),
-    // }),
   }),
 });
 
