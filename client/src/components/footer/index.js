@@ -15,16 +15,16 @@ function Footer() {
 
         <div className='socials'>
           <h4 style={{ marginRight: '0.65rem' }}>Follow us on</h4>
-          <a href='www.twitter.com'>
+          <a href='www.twitter.com' target='_blank'>
             <i className='fab fa-twitter' />
           </a>
-          <a href='www.instagram.com'>
+          <a href='www.instagram.com' target='_blank'>
             <i className='fab fa-instagram' />
           </a>
-          <a href='www.youtube.com'>
+          <a href='www.youtube.com' target='_blank'>
             <i className='fab fa-youtube' />
           </a>
-          <a href='www.discord.com'>
+          <a href='www.discord.com' target='_blank'>
             <i className='fab fa-discord' />
           </a>
         </div>
