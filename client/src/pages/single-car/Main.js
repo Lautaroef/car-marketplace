@@ -6,9 +6,6 @@ import {
 } from '../../redux/carsInfo/carsApi';
 //Components
 import Car from './car/Main';
-import Paypal from './paypal/Main';
-import Button from '@mui/material/Button';
-import CircularProgress from '@mui/material/CircularProgress';
 
 function Main() {
   const [showPaymentMethods, setShowPaymentMethods] = useState(false);
@@ -36,9 +33,10 @@ function Main() {
             isSuccess={isSuccess}
             isLoading={isLoading}
             handleBuyCar={handleBuyCar}
+            showPaymentMethods={showPaymentMethods}
             setShowPaymentMethods={setShowPaymentMethods}
           />
-          <Button
+          {/* <Button
             disableElevation
             variant='contained'
             className='buy-button'
@@ -46,16 +44,7 @@ function Main() {
             onClick={handleBuyCar}
           >
             {isLoading ? <CircularProgress size='1.5rem' /> : 'Buy car'}
-          </Button>
-
-          {showPaymentMethods && (
-            <Paypal
-              carInfo={car}
-              showPaymentMethods={showPaymentMethods}
-              handleBuyCar={handleBuyCar}
-              isLoading={isLoading}
-            />
-          )}
+          </Button> */}
         </>
       )}
     </section>

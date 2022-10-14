@@ -15,19 +15,13 @@ function Main({ carInfo, showPaymentMethods, handleBuyCar, isLoading }) {
   };
 
   return (
-    <div>
-      {showPaymentMethods && (
-        <>
-          <PayPalScriptProvider options={initialPaypalOptions}>
-            <PaypalComponent
-              carInfo={carInfo}
-              newCurrency={newCurrency}
-              setCurrency={setNewCurrency}
-            />
-          </PayPalScriptProvider>
-        </>
-      )}
-    </div>
+    <PayPalScriptProvider options={initialPaypalOptions}>
+      <PaypalComponent
+        carInfo={carInfo}
+        newCurrency={newCurrency}
+        setCurrency={setNewCurrency}
+      />
+    </PayPalScriptProvider>
   );
 }
 

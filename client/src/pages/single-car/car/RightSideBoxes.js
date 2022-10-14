@@ -1,15 +1,23 @@
-import { Button, Icon } from '@mui/material';
 import React from 'react';
-import { numberWithSeparator } from '../../../components/Hooks&Functions/Functions';
+import Paypal from '../paypal/Main';
+import { Button, Icon } from '@mui/material';
+import { numberWithSeparator } from '../../../Functions';
 
-function RightSideBoxes({ year, price, model, make, setShowPaymentMethods }) {
-  price = numberWithSeparator(price, '.');
+function RightSideBoxes({
+  carInfo,
+  handleBuyCar,
+  isLoading,
+  showPaymentMethods,
+  setShowPaymentMethods,
+}) {
+  const { year, price, model, make } = carInfo;
+  const prettyPrice = numberWithSeparator(price, '.');
 
   return (
     <div className='right-side-boxes'>
       <div className='price-and-others'>
         <div>
-          <h2>$ {price}</h2>
+          <h2>$ {prettyPrice}</h2>
           <div>
             <i className='fas fa-share' />
             <i className='fas fa-heart' />
@@ -53,8 +61,16 @@ function RightSideBoxes({ year, price, model, make, setShowPaymentMethods }) {
         className='buy-button'
         onClick={() => setShowPaymentMethods(true)}
       >
-        See More ...
+        Buy Car
       </Button>
+      {showPaymentMethods && (
+        <Paypal
+          carInfo={carInfo}
+          showPaymentMethods={showPaymentMethods}
+          handleBuyCar={handleBuyCar}
+          isLoading={isLoading}
+        />
+      )}
     </div>
   );
 }

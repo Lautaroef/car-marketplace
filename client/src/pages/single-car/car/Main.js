@@ -4,6 +4,7 @@ import history from 'history/browser';
 import Button from '@mui/material/Button';
 import RightSideInfo from './RightSideBoxes';
 import ImageAndDetails from './ImageAndDetails';
+import CircularProgress from '@mui/material/CircularProgress';
 // Alerts feedbacks
 import ErrorAlert from '../../../components/other-components/loading-feedback/ErrorAlert';
 import SuccessAlert from '../../../components/other-components/loading-feedback/SuccessAlert';
@@ -11,7 +12,9 @@ import SuccessAlert from '../../../components/other-components/loading-feedback/
 function Main({
   carInfo,
   handleBuyCar,
+  showPaymentMethods,
   setShowPaymentMethods,
+  isLoading,
   isSuccess,
   isError,
 }) {
@@ -31,8 +34,10 @@ function Main({
         <main>
           <ImageAndDetails {...carInfo} />
           <RightSideInfo
-            {...carInfo}
+            carInfo={carInfo}
+            isLoading={isLoading}
             handleBuyCar={handleBuyCar}
+            showPaymentMethods={showPaymentMethods}
             setShowPaymentMethods={setShowPaymentMethods}
           />
         </main>
