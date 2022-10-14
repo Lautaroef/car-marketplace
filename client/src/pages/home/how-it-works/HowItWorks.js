@@ -9,12 +9,13 @@ import {
 function HowItWorks() {
   const [showBuySteps, setShowBuySteps] = useState(true);
   const stepsContainerRef = useRef();
-  const buyRef = useRef();
+  const buyContainerRef = useRef();
+  const sellContainerRef = useRef();
 
   useEffect(() => {
     // Move the container depending the selected option
     const stepsContainer = stepsContainerRef.current;
-    const buyContainer = buyRef.current;
+    const buyContainer = buyContainerRef.current;
 
     const buyWidth = buyContainer.getBoundingClientRect().width;
 
@@ -29,16 +30,18 @@ function HowItWorks() {
     <div className='how-it-works' id='bottom'>
       <h1>How It Works</h1>
       <ToggleButtons setShowBuySteps={setShowBuySteps} />
-      <div className='steps-container' ref={stepsContainerRef}>
-        <div className='buy-carousel' ref={buyRef}>
-          {buySteps.map((step) => {
-            return <SingleStep key={step.title} {...step} />;
-          })}
-        </div>
-        <div className='sell-carousel'>
-          {sellSteps.map((step) => {
-            return <SingleStep key={step.title} {...step} />;
-          })}
+      <div className='steps-container-wrapper'>
+        <div className='steps-container' ref={stepsContainerRef}>
+          <div className='buy-carousel' ref={buyContainerRef}>
+            {buySteps.map((step) => {
+              return <SingleStep key={step.title} {...step} />;
+            })}
+          </div>
+          <div className='sell-carousel' ref={sellContainerRef}>
+            {sellSteps.map((step) => {
+              return <SingleStep key={step.title} {...step} />;
+            })}
+          </div>
         </div>
       </div>
     </div>

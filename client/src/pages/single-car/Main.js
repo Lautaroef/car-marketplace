@@ -20,7 +20,7 @@ function Main() {
     getCar(carID);
   }, []);
   const handleBuyCar = () => {
-    // setShowPaymentMethods(!showPaymentMethods);
+    setShowPaymentMethods(!showPaymentMethods);
     deleteCar(carID);
   };
 
@@ -48,12 +48,14 @@ function Main() {
             {isLoading ? <CircularProgress size='1.5rem' /> : 'Buy car'}
           </Button>
 
-          {/* <Paypal
-            carInfo={car}
-            showPaymentMethods={showPaymentMethods}
-            handleBuyCar={handleBuyCar}
-            isLoading={isLoading}
-          /> */}
+          {showPaymentMethods && (
+            <Paypal
+              carInfo={car}
+              showPaymentMethods={showPaymentMethods}
+              handleBuyCar={handleBuyCar}
+              isLoading={isLoading}
+            />
+          )}
         </>
       )}
     </section>
