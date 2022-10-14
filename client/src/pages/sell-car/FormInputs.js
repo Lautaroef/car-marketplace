@@ -106,7 +106,7 @@ function CarForm({
           {...register('year', {
             required: true,
             min: minimumYear,
-            max: currentYear,
+            max: currentYear + 1,
           })}
           error={errors?.year ? true : false}
           helperText={
