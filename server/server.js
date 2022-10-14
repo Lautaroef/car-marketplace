@@ -10,15 +10,18 @@ const buyACarRoute = require('./routes/cars');
 require('dotenv').config();
 
 app.use(cors({ origin: 'https://rumrumcars-a9207.web.app'}));
+// app.use(cors({ origin: 'http://localhost:3000'}));
 
 app.use('/public', express.static(__dirname + '../../public'));
 
+// limit size of input files
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // buy a car route
 app.use('/api/cars', buyACarRoute);
 
+// error handlers
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
