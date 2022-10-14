@@ -4,7 +4,7 @@ import {
   randomMiles,
   capitalizeFirstLetter,
   numberWithSeparator,
-} from '../../../components/Hooks&Functions/Functions';
+} from '../../../Functions';
 // Components
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
