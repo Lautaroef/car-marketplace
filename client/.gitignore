@@ -3,6 +3,7 @@
 .env
 .vscode
 organization.txt
+src/components/firebase/firebaseConfig.tsx
 private-settings.js
 storeImagesLocally.js
 # dependencies

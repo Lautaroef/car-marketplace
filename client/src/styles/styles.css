@@ -194,6 +194,7 @@
   font-weight: 600;
   margin-bottom: 1.1rem;
   text-align: left;
+  text-transform: capitalize;
 }
 .footer .container-lists ul {
   display: flex;
@@ -497,9 +498,24 @@
 .buy-a-car .cars .results .filters-sidebar .years label,
 .buy-a-car .cars .results .filters-sidebar .price label {
   max-width: 100%;
+  margin-bottom: 0.25rem;
   font-weight: 700;
   font-size: 0.85rem;
   color: #59636e;
+}
+.buy-a-car .cars .results .filters-sidebar .years input {
+  padding-top: 0.5rem;
+}
+.buy-a-car .cars .results .filters-sidebar .price input {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5rem 0.85rem 0.5rem 0.75rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #000;
+  border-radius: 0.25rem;
+  border: 1px solid #e1e4e8;
+  outline: none;
 }
 .buy-a-car .cars .results .filters-sidebar .makers .MuiAutocomplete-input {
   padding-top: 0.4rem;
@@ -1674,6 +1690,7 @@
 
 nav *,
 button,
+input,
 h1,
 h2,
 h3 {

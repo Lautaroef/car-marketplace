@@ -57,6 +57,7 @@
       font-weight: 600;
       margin-bottom: 1.1rem;
       text-align: left;
+      text-transform: capitalize;
     }
     ul {
       @include flexCenter(center, flex-start, column);

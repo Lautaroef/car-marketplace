@@ -144,10 +144,28 @@
 
           label {
             max-width: 100%;
+            margin-bottom: 0.25rem;
             font-weight: 700;
             font-size: 0.85rem;
             color: $--subtitle-gray;
           }
+        }
+
+        .years input {
+          padding-top: 0.5rem;
+        }
+
+        .price input {
+          width: 100%;
+          max-width: 100%;
+          // padding: 0.5rem 0.85rem 0.1rem 0.75rem;
+          padding: 0.5rem 0.85rem 0.5rem 0.75rem;
+          font-weight: 500;
+          font-size: 0.9rem;
+          color: #000;
+          border-radius: 0.25rem;
+          border: 1px solid $--border-gray;
+          outline: none;
         }
 
         .makers {
