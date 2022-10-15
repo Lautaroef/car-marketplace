@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import history from 'history/browser';
-import { useAppSelector } from 'redux/Hooks';
+import { useAppSelector } from 'redux/hooks';
 import { useGetCarsQuery } from '../../redux/carsInfo/carsApi';
 import Cars from './cars/Main';
 import Header from './search-bar/Main';

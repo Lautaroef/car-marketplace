@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { auth } from './firebaseConfig';
-import { useAppDispatch } from 'redux/Hooks';
+import { useAppDispatch } from 'redux/hooks';
 import { saveUserCredentials } from '../../redux/login/LoginSlice';
 import Modal from './Modal';
 // Firebase

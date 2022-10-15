@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppSelector, useAppDispatch } from 'redux/Hooks';
+import { useAppSelector, useAppDispatch } from 'redux/hooks';
 import { sortBySelectedOption } from '../../../redux/carsInfo/filtersSlice';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { selectedPage } from '../../../redux/carsInfo/filtersSlice';
 import Pagination from '@mui/material/Pagination';
-import { useAppSelector, useAppDispatch } from 'redux/Hooks';
+import { useAppSelector, useAppDispatch } from 'redux/hooks';
 
 function Main() {
   const currentPage = useAppSelector((state) => state.filtersValues.currentPage);

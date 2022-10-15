@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppSelector, useAppDispatch } from 'redux/Hooks';
+import { useAppSelector, useAppDispatch } from 'redux/hooks';
 import { saveHorsepowers } from '../../../redux/carsInfo/filtersSlice';
 import Slider from '@mui/material/Slider';
 

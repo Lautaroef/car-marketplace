@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { openCloseModal } from 'redux/login/LoginSlice';
-import { useAppDispatch, useAppSelector } from 'redux/Hooks';
+import { useAppDispatch, useAppSelector } from 'redux/hooks';
 import { VisibilityOn, VisibilityOff } from '../other-components/Visibility';
 import googleImg from '../../images/logos/google-icon.png';
 import Dialog from '@mui/material/Dialog';

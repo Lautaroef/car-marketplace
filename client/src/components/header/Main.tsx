@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from 'redux/Hooks';
+import { useAppDispatch, useAppSelector } from 'redux/hooks';
 import useWindowSize from 'hooks/useWindowSize';
 import { openCloseModal } from 'redux/login/LoginSlice';
 import logoSrc from 'images/logos/rumrum.png';

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useAppDispatch } from 'redux/Hooks';
+import { useAppDispatch } from 'redux/hooks';
 import { headerInputValue } from '../../../redux/carsInfo/filtersSlice';
 import CarInput from './CarInput';
 import ChipsArray from './ChipsArray';

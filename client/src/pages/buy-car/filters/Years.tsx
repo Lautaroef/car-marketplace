@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppSelector, useAppDispatch } from 'redux/Hooks';
+import { useAppSelector, useAppDispatch } from 'redux/hooks';
 import { saveYears } from '../../../redux/carsInfo/filtersSlice';
 import { yearsArray, currentYear } from './schema';
 import TextField from '@mui/material/TextField';
