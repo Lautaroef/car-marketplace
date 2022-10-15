@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppSelector, useAppDispatch } from 'redux/Hooks';
+import { useAppSelector, useAppDispatch } from 'redux/hooks';
 import { savePrices } from '../../../redux/carsInfo/filtersSlice';
 import DebouncedInput from 'components/other-components/DebouncedInput';
 
