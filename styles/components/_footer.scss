@@ -1,0 +1,95 @@
+@use 'sass:list';
+
+.footer {
+  @include flexCenter(space-between, unset, column);
+  width: 100%;
+  max-width: $--max-page-width;
+  margin: auto;
+  padding: $--x-padding-page;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  li,
+  li::marker {
+    color: $--subtitle-gray;
+  }
+
+  .logo-socials {
+    @include flexCenter(space-between);
+
+    @media screen and (max-width: $--breakpoint-sm) {
+      flex-direction: column;
+      row-gap: 1.5rem;
+    }
+    img {
+      width: 190px;
+    }
+    .socials {
+      @include flexCenter();
+      column-gap: 0.4rem;
+
+      i {
+        font-size: 1.5rem;
+        transition: color 0.1s;
+        &:hover {
+          color: $--primary-button;
+        }
+      }
+    }
+  }
+
+  hr {
+    border-bottom: 1px solid rgba($color: $--border-color, $alpha: 0.08);
+  }
+
+  .container-lists {
+    display: grid;
+    align-items: flex-start;
+    justify-items: center;
+    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media screen and (max-width: $--breakpoint-sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    h3 {
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+      text-align: left;
+      text-transform: capitalize;
+    }
+    ul {
+      @include flexCenter(center, flex-start, column);
+      row-gap: 0.9rem;
+      a:hover {
+        color: #000;
+      }
+    }
+  }
+
+  .end-information {
+    @include flexCenter(space-between);
+
+    @media screen and (max-width: $--breakpoint-sm) {
+      flex-direction: column-reverse;
+      row-gap: 0.5rem;
+    }
+
+    .copyright {
+      @include flexCenter();
+      column-gap: 1.25rem;
+      span {
+        color: $--primary-color;
+      }
+    }
+
+    ul {
+      @include flexCenter();
+      column-gap: 2rem;
+      li {
+        list-style: initial;
+      }
+    }
+  }
+}

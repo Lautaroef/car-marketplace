@@ -1,0 +1,92 @@
+.first-look {
+  @include flexCenter(unset, unset, column);
+
+  > div {
+    width: 100%;
+    background-image: url(../images//happyDriver//car-road.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    > section {
+      @include flexCenter(center, flex-start, column);
+      flex: 1;
+      width: 100%;
+      min-height: 38rem;
+      margin: 2.5rem auto;
+      padding-left: 4rem;
+
+      @media screen and (max-width: $--breakpoint-lg) {
+        padding: 0 2rem;
+      }
+
+      *:not(:last-child) {
+        line-height: 1.7;
+      }
+
+      h1 {
+        font-size: 2.85rem;
+        font-weight: 900;
+        color: $--white;
+        text-shadow: 1px 0 2px rgba($color: $--border-color, $alpha: 0.5),
+          0 0 8px rgba($color: $--border-color, $alpha: 0.35);
+      }
+
+      h2 {
+        font-size: 2.15rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: $--white;
+        text-shadow: 1px 0 2px rgba($color: $--border-color, $alpha: 0.5),
+          0 0 8px rgba($color: $--border-color, $alpha: 0.35);
+
+        &::after {
+          content: 'easy!';
+          color: $--primary-color;
+          margin-left: 0.5rem;
+          text-shadow: none;
+        }
+      }
+
+      h4 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.25rem;
+        color: $--white;
+        text-shadow: 1px 0 2px rgba($color: $--border-color, $alpha: 0.5),
+          0 0 8px rgba($color: $--border-color, $alpha: 0.35);
+      }
+
+      .buy-sell-buttons {
+        @include flexCenter(center, stretch);
+
+        @media screen and (max-width: $--breakpoint-sm) {
+          @include flexCenter(unset);
+          flex-wrap: wrap;
+          button {
+            width: 100%;
+            margin: 0.2rem;
+          }
+        }
+
+        button {
+          @include flexCenter();
+          @include primaryButton();
+          column-gap: 0.8rem;
+          margin-right: 0.5rem;
+          font-weight: 700;
+
+          a {
+            @include flexCenter(center, flex-end);
+          }
+        }
+      }
+    }
+  }
+}
+.center-image {
+  margin: 2rem auto 0 auto;
+  img {
+    width: 35px;
+  }
+}
