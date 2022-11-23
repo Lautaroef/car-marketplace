@@ -1,10 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import SingleStep from './SingleStep';
 import ToggleButtons from './ToggleButtons';
-import {
-  buySteps,
-  sellSteps,
-} from '../../../components/other-components/random-data/buyorsell-images-info';
+import { buySteps, sellSteps } from 'components/other/random-data/buyorsell-images-info';
 
 function HowItWorks() {
   const [showBuySteps, setShowBuySteps] = useState<boolean>(true);
@@ -32,14 +29,14 @@ function HowItWorks() {
       <div className='steps-container-wrapper'>
         <div className='steps-container' ref={stepsContainerRef}>
           <div className='buy-carousel' ref={buyContainerRef}>
-            {buySteps.map((step) => {
-              return <SingleStep key={step.title} step={step} />;
-            })}
+            {buySteps.map((step) => (
+              <SingleStep key={step.title} step={step} />
+            ))}
           </div>
           <div className='sell-carousel'>
-            {sellSteps.map((step) => {
-              return <SingleStep key={step.title} step={step} />;
-            })}
+            {sellSteps.map((step) => (
+              <SingleStep key={step.title} step={step} />
+            ))}
           </div>
         </div>
       </div>

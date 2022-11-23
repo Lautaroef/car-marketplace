@@ -1,4 +1,4 @@
-import React from 'react';
+import Image from 'next/image';
 
 type Props = {
   username: string;
@@ -11,7 +11,7 @@ function UsernameAndPhoto({ username, userIcon, handleOpenModal }: Props) {
     <div onClick={handleOpenModal} className='user-registered-component'>
       <h3>{username}</h3>
       {userIcon ? (
-        <img src={userIcon} alt={username} />
+        <Image src={userIcon} alt={username} />
       ) : (
         <i className='fas fa-user-circle' />
       )}

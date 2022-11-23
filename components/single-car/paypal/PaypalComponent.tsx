@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import {
   usePayPalScriptReducer,
   PayPalButtons,
@@ -7,7 +7,7 @@ import {
 } from '@paypal/react-paypal-js';
 
 type Props = {
-  carInfo: CarProps;
+  carInfo: Car;
   newCurrency: Currencies;
   setCurrency: React.Dispatch<React.SetStateAction<Currencies>>;
 };

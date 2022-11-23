@@ -183,6 +183,7 @@
 
         .result-details {
           width: 100%;
+          max-height: 48px;
           display: grid;
           grid-template-columns: max-content 1fr;
           grid-template-areas: 'nb-results sort-and-filters';
@@ -199,6 +200,11 @@
           .sort-and-filters {
             justify-self: end;
             grid-area: sort-and-filters;
+
+            button {
+              height: 42px;
+              max-height: 42px;
+            }
           }
 
           button {

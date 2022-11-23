@@ -3,7 +3,8 @@ import { createApi, FetchArgs, fetchBaseQuery } from '@reduxjs/toolkit/query/rea
 export const carsApi = createApi({
   reducerPath: 'cars',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://rumrumcars.herokuapp.com/api/cars/',
+    baseUrl: '/api/cars',
+    // baseUrl: 'https://rumrumcars.herokuapp.com/api/cars/',
     // baseUrl: 'http://localhost:3001/api/cars',
   }),
   keepUnusedDataFor: 90,

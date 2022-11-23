@@ -1,12 +1,12 @@
-import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
 
-function ImageAndDetails({ img_url = '', make, model, year }: CarProps) {
+function ImageAndDetails({ img_url, make, model, year }: Car) {
   return (
     <div className='image-and-details'>
       <div className='slider'>
-        <img src={img_url} alt={'bugatti'} />
+        <Image src={img_url} alt={'Bugatti'} />
       </div>
       <div className='slider-images'>
         <div>📷</div>
@@ -28,8 +28,8 @@ function ImageAndDetails({ img_url = '', make, model, year }: CarProps) {
         </Button>
       </div>
       <h5>
-        Please refer to the <Link to='/contact'>Terms of Sale</Link> for{' '}
-        <Link to='/contact'>additional fees and charges</Link> that might apply.
+        Please refer to the <Link href='/contact'>Terms of Sale</Link> for{' '}
+        <Link href='/contact'>additional fees and charges</Link> that might apply.
       </h5>
       <div className='car-details'>
         <div className='description'>

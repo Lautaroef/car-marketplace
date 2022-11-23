@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react';
 
 function useWindowSize() {
-  const [windowXSize, setWindowXSize] = useState<[number]>([window.innerWidth]);
+  const [windowXsize, setWindowXsize] = useState<number | undefined>(undefined);
 
   useEffect(() => {
-    const handleResize = () => {
-      setWindowXSize([window.innerWidth]);
-    };
+    function handleResize() {
+      if (window.innerWidth) {
+        setWindowXsize(window.innerWidth);
+      }
+    }
+
     window.addEventListener('resize', handleResize);
+
     // Call handler right away so state gets updated with initial window size
     handleResize();
 
@@ -15,7 +19,7 @@ function useWindowSize() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return windowXSize;
+  return windowXsize;
 }
 
 export default useWindowSize;

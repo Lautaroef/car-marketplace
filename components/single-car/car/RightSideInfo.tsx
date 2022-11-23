@@ -1,10 +1,9 @@
-import React from 'react';
 import Paypal from '../paypal/Main';
 import { Button } from '@mui/material';
-import { numberWithSeparator } from '../../../functions';
+import numberWithSeparator from 'functions/numberWithSeparator';
 
 type Props = {
-  carInfo: CarProps;
+  carInfo: Car;
   isLoading: boolean;
   handleBuyCar: () => void;
   showPaymentMethods: boolean;

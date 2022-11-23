@@ -1,10 +1,9 @@
-import React from 'react';
-import history from 'history/browser';
+import { useRouter } from 'next/navigation';
 import RightSideInfo from './RightSideInfo';
 import ImageAndDetails from './ImageAndDetails';
 // Alerts feedbacks
-import ErrorAlert from '../../../components/other-components/loading-feedback/ErrorAlert';
-import SuccessAlert from '../../../components/other-components/loading-feedback/SuccessAlert';
+import ErrorAlert from 'components/other/loading-feedback/ErrorAlert';
+import SuccessAlert from 'components/other/loading-feedback/SuccessAlert';
 
 type Props = {
   carInfo: any;
@@ -25,6 +24,7 @@ function Main({
   isSuccess,
   isError,
 }: Props) {
+  const router = useRouter();
   let { year, make, model } = carInfo;
 
   return (
@@ -33,7 +33,7 @@ function Main({
         <div className='title-price'>
           <button
             // variant='contained'
-            onClick={() => history.back()}
+            onClick={() => router?.back()}
           >
             <i className='fas fa-caret-left' /> Back to previous search
           </button>

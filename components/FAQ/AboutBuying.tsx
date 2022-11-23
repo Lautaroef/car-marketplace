@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import { buyingFaqs } from '../../components/other-components/random-data/faqs';
+import { buyingFaqs } from '../other/random-data/faqs';
 
 function BuyingFaqs() {
   const [expandedEl, setExpandedEl] = useState<string | false>(false);

@@ -17,7 +17,6 @@
   box-shadow: 0 4px 15px -10px rgba(0, 0, 0, 0.9);
 }
 .infinite-navbar nav img[alt=RumRumCars] {
-  width: 135px;
   margin: 0.4rem auto;
 }
 .infinite-navbar nav .hamburger-menu {
@@ -530,6 +529,7 @@
 }
 .buy-a-car .cars .results .cars-sidebar .result-details {
   width: 100%;
+  max-height: 48px;
   display: grid;
   grid-template-columns: -webkit-max-content 1fr;
   grid-template-columns: max-content 1fr;
@@ -546,6 +546,10 @@
 .buy-a-car .cars .results .cars-sidebar .result-details .sort-and-filters {
   justify-self: end;
   grid-area: sort-and-filters;
+}
+.buy-a-car .cars .results .cars-sidebar .result-details .sort-and-filters button {
+  height: 42px;
+  max-height: 42px;
 }
 .buy-a-car .cars .results .cars-sidebar .result-details button {
   flex: 1;
@@ -1584,6 +1588,23 @@
   text-align: left;
   transition: all 0.3s ease;
 }
+.how-it-works .steps-container .buy-carousel,
+.how-it-works .steps-container .sell-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 1rem 0;
+}
+.how-it-works .steps-container .buy-carousel picture,
+.how-it-works .steps-container .sell-carousel picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  height: 142px;
+}
 .how-it-works .steps-container::-webkit-scrollbar {
   height: 15px;
 }
@@ -1593,23 +1614,6 @@
 .how-it-works .steps-container::-webkit-scrollbar-thumb {
   background-color: #e1e4e8;
   border-radius: 10px;
-}
-.how-it-works .steps-container .buy-carousel,
-.how-it-works .steps-container .sell-carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  padding: 1rem 0;
-}
-.how-it-works .steps-container picture {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-.how-it-works .steps-container img {
-  width: 100%;
 }
 
 .wrapper {

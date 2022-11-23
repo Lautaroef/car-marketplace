@@ -1,16 +1,15 @@
-import React from 'react';
 import type { UseFormRegister, FieldValues, UseFormHandleSubmit } from 'react-hook-form';
-import { usePostCarMutation } from '../../redux/carsInfo/carsApi';
-import { minimumYear, currentYear, makersArray } from '../buy-car/filters/schema';
+import { usePostCarMutation } from 'redux/carsInfo/carsApi';
+import { minimumYear, currentYear, makersArray } from '../buy-a-car/filters/schema';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import InputLabel from '@mui/material/InputLabel';
 import FormHelperText from '@mui/material/FormHelperText';
 // Alerts feedback
-import ErrorAlert from '../../components/other-components/loading-feedback/ErrorAlert';
-import SuccessAlert from '../../components/other-components/loading-feedback/SuccessAlert';
-import LoadingScreen from '../../components/other-components/loading-feedback/LoadingScreen';
+import ErrorAlert from '../other/loading-feedback/ErrorAlert';
+import SuccessAlert from '../other/loading-feedback/SuccessAlert';
+import LoadingScreen from '../other/loading-feedback/LoadingScreen';
 
 type Props = {
   carFormInfo: {

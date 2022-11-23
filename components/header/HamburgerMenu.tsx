@@ -1,6 +1,6 @@
 import type { StaticImageData } from 'next/image';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Image from 'next/image';
 
 import Box from '@mui/material/Box';
@@ -29,8 +29,8 @@ function HamburgerMenu({ menuItems, logo }: Props) {
       >
         <div style={{ width: '250px' }}>
           <Box textAlign={'center'} p={2} paddingLeft={1}>
-            <Link to='/'>
-              <Image src={logo} alt='RumRumCars' width={'135px'} />
+            <Link href='/'>
+              <Image src={logo} alt='RumRumCars' width={135} />
             </Link>
           </Box>
           <Divider />
@@ -39,7 +39,7 @@ function HamburgerMenu({ menuItems, logo }: Props) {
               return (
                 <ListItem
                   component={Link}
-                  to={item.to}
+                  href={item.to}
                   key={item.title}
                   onClick={() => setOpenMenu(false)}
                 >

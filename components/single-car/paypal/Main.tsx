@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PaypalComponent from './PaypalComponent';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 type Props = {
-  carInfo: CarProps;
+  carInfo: Car;
 };
 
 function Main({ carInfo }: Props) {

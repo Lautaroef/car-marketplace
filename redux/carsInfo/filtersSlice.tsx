@@ -1,19 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { minimumYear, currentYear } from '../../pages/buy-car/filters/schema';
+import { minimumYear, currentYear } from 'components/buy-a-car/filters/schema';
 
-type Props = {
-  searchValue: string;
-  sidebarFilters: {
-    years: [number, number];
-    makers: string;
-    price: [number, number];
-    horsepowers: [number, number];
-  };
-  sortBySelectedOption: string;
-  currentPage: number;
-};
-
-const initialState: Props = {
+const initialState: FilterOptions = {
   searchValue: '',
   sidebarFilters: {
     years: [minimumYear, currentYear],

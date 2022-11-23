@@ -1,25 +1,24 @@
-import React from 'react';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
+import Image from 'next/image';
 
 type Props = {
   step: HowItWorksStep;
 };
 
-function SingleCard({ step }: Props) {
-  const { src, title, info, borderRadius, width } = step;
+function SingleStep({ step }: Props) {
+  const { img, title, info, borderRadius } = step;
   return (
     <Card>
       <picture>
-        <CardMedia
-          component='img'
-          image={src}
+        <Image
+          fill
+          src={img}
           alt={title}
           style={{
             borderRadius: borderRadius || '50px',
-            width: width || '150px',
           }}
         />
       </picture>
@@ -33,4 +32,4 @@ function SingleCard({ step }: Props) {
   );
 }
 
-export default SingleCard;
+export default SingleStep;

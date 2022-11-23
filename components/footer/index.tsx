@@ -1,14 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import footerInfo from '../other-components/random-data/footer-info';
+import Image from 'next/image';
+import Link from 'next/link';
+import footerInfo from '../other/random-data/footer-info';
 import Divider from '@mui/material/Divider';
-import logo from '../../images/logos/rumrum.png';
+import logo from 'images/logos/rumrum.png';
 
 function Footer() {
   return (
     <div className='footer'>
       <div className='logo-socials'>
-        <img src={logo} alt='RumRumCars' />
+        <Image src={logo} alt='RumRumCars' />
 
         <div className='socials'>
           <h4 style={{ marginRight: '0.65rem' }}>Follow us on</h4>
@@ -40,7 +40,7 @@ function Footer() {
               {itemLinks.map((link) => (
                 <ul key={link.title}>
                   <li key={link.title}>
-                    <Link to={link.to}>{link.title}</Link>
+                    <Link href={link.to}>{link.title}</Link>
                   </li>
                 </ul>
               ))}

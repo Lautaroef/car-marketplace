@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+import Image from 'next/image';
 import { useAppDispatch, useAppSelector } from 'redux/hooks';
 import useWindowSize from 'hooks/useWindowSize';
 import { openCloseModal } from 'redux/login/LoginSlice';
@@ -13,7 +14,7 @@ function Navbar() {
   const { username, userIcon } = useAppSelector(
     (state) => state.loginValues.userCredentials
   );
-  const [windowXSize] = useWindowSize();
+  const windowXSize = useWindowSize();
   const dispatch = useAppDispatch();
 
   const handleOpenModal = () => {
@@ -34,14 +35,14 @@ function Navbar() {
       <nav>
         {/* Hamburger Menu */}
         <HamburgerMenu menuItems={menuItems} logo={logoSrc} />
-        <Link to='/'>
-          <img src={logoSrc} alt='RumRumCars' />
+        <Link href='/'>
+          <Image src={logoSrc} alt='RumRumCars' width={135} />
         </Link>
         <ul>
           {menuItems.map((item) => {
             return (
               <li key={item.title}>
-                <Link to={item.to}>{item.title}</Link>
+                <Link href={item.to}>{item.title}</Link>
               </li>
             );
           })}
@@ -55,7 +56,7 @@ function Navbar() {
         ) : (
           <>
             {/* Show only userLogo if window X with is smaller than 576 px */}
-            {windowXSize < 576 ? (
+            {windowXSize && windowXSize < 576 ? (
               <i onClick={handleOpenModal} className='login-icon fas fa-user-circle' />
             ) : (
               <LoginAndRegisterButtons handleOpenModal={handleOpenModal} />

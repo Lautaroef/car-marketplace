@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { numberWithSeparator } from '../../functions';
+import { useState } from 'react';
+import numberWithSeparator from 'functions/numberWithSeparator';
 import Accordion from '@mui/material/Accordion';
 import Typography from '@mui/material/Typography';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -31,7 +31,7 @@ function FinalResult({ carFormInfo, previewSource }: Props) {
 
   // To generate random number in retail price range
   const multiply = (multiplyNum: number) => {
-    numberWithSeparator(parseInt((price * multiplyNum).toFixed(0)), '.');
+    return numberWithSeparator(parseInt((price * multiplyNum).toFixed(0)), '.');
   };
 
   return (

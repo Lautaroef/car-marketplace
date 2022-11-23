@@ -1,4 +1,3 @@
-import React from 'react';
 import AboutBuying from './AboutBuying';
 import AboutSelling from './AboutSelling';
 

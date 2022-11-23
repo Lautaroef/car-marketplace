@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import loadState from '../localStorage';
 
-type loginProps = {
+type LoginProps = {
   isModalOpen: boolean;
   userCredentials: {
     username: string;
@@ -11,7 +11,7 @@ type loginProps = {
 
 const persistedUserCredentials = loadState();
 
-const initialState: loginProps = {
+const initialState: LoginProps = {
   isModalOpen: false,
   userCredentials: {
     username: persistedUserCredentials?.username || '',

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Image from 'next/image';
 import { openCloseModal } from 'redux/login/LoginSlice';
 import { useAppDispatch, useAppSelector } from 'redux/hooks';
-import { VisibilityOn, VisibilityOff } from '../other-components/Visibility';
-import googleImg from '../../images/logos/google-icon.png';
+import { VisibilityOn, VisibilityOff } from '../other/EyeIcon';
+import googleImg from 'images/logos/google-icon.png';
 import Dialog from '@mui/material/Dialog';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
@@ -159,7 +160,7 @@ function Modal({
             </Button>
             <Divider className='auth-divider'>or</Divider>
             <Button className='auth-google' onClick={signInWithGoogle}>
-              <img src={googleImg} alt='Google' />
+              <Image src={googleImg} alt='Google' />
               Login with Google
             </Button>
             <DialogContentText fontSize={'small'}>
