@@ -1,0 +1,111 @@
+.sell-a-car {
+  @include flexCenter(center, unset);
+  gap: 2.5rem;
+  margin: 2rem auto;
+
+  @media screen and (max-width: $--breakpoint-md) {
+    @include flexCenter(center, center, column);
+  }
+
+  .form-section {
+    width: 100%;
+    .sell-header {
+      > div {
+        @include flexCenter(space-between);
+      }
+
+      img[alt='bulb-svg'] {
+        width: 1.35rem;
+        margin-right: 0.25rem;
+      }
+    }
+
+    // <FormInputs />
+    form {
+      @include flexCenter(center, unset, column);
+      margin: 0.85rem auto;
+
+      label:not(:nth-last-child(3)) {
+        margin-bottom: -0.25rem;
+        font-size: 0.95rem;
+      }
+
+      .MuiSelect-select {
+        margin-top: 0.45rem;
+        background-color: $--bg-input;
+      }
+
+      .MuiTextField-root {
+        margin-bottom: 0.45rem;
+
+        input {
+          margin-top: 0.45rem;
+          background-color: $--bg-input;
+        }
+
+        p {
+          margin: auto 0;
+        }
+      }
+      .img-input {
+        padding: 1rem 1.5rem;
+        background-color: rgba($color: $--border-color, $alpha: 0.125);
+        border: 2px dotted rgba($color: $--border-color, $alpha: 0.25);
+        text-align: center;
+      }
+
+      button[type='submit'] {
+        @include primaryButton($--primary-button, $--primary-button-hover);
+        margin: 1rem 0;
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .box-shadow {
+    padding: 3.25vh 4.5vw;
+    height: calc(100vh - 3.5rem);
+    background-color: $--bg-light; // $--bg-input
+    overflow-y: scroll;
+    @media screen and (max-width: $--breakpoint-md) {
+      height: max-content;
+    }
+
+    .final-result {
+      background-color: #fff;
+      padding: 4.5vh 4.5vw;
+      box-shadow: $--lg-box-shadow;
+      border-radius: 1.25rem;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      > div {
+        h2 {
+          font-size: 1.75rem;
+        }
+
+        p {
+          color: $--subtitle-gray;
+        }
+        > p {
+          margin: 0.5rem auto;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+      }
+
+      .grid-estimated-values {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0.5rem auto 1.5rem auto;
+        color: $--subtitle-gray;
+      }
+    }
+  }
+}

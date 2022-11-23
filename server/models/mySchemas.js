@@ -1,0 +1,82 @@
+// Years
+const currentYear = new Date().getFullYear();
+const minimumYear = 1995;
+
+let yearsArray = [];
+for (let i = minimumYear; i <= currentYear; i++) {
+  const numToStr = i; // .toString()
+  yearsArray.push(numToStr);
+}
+
+// Makers list
+const makersArray = [
+  'Acura',
+  'Alfa-romeo',
+  'AMC',
+  'Aston-Martin',
+  'Audi',
+  'Bentley',
+  'Bmw',
+  'Bugatti',
+  'Buick',
+  'Cadillac',
+  'Chevrolet',
+  'Chrysler',
+  'Daewoo',
+  'Datsun',
+  'DeLorean',
+  'Dodge',
+  'Eagle',
+  'Ferrari',
+  'Fiat',
+  'Fisker',
+  'Ford',
+  'Freightliner',
+  'Genesis',
+  'Geo',
+  'GMC',
+  'Honda',
+  'HUMMER',
+  'Hyundai',
+  'Infiniti',
+  'Isuzu',
+  'Jaguar',
+  'Jeep',
+  'Karma',
+  'Kia',
+  'Lamborghini',
+  'Land-rover',
+  'Lexus',
+  'Lincoln',
+  'Lotus',
+  'Maserati',
+  'Maybach',
+  'Mazda',
+  'Mclaren',
+  'Mercedes-Benz',
+  'Mercury',
+  'Mini',
+  'Mitsubishi',
+  'Nissan',
+  'Oldsmobile',
+  'Plymouth',
+  'Polestar',
+  'Pontiac',
+  'Porsche',
+  'Ram',
+  'Rolls-Royce',
+  'Saab',
+  'Saturn',
+  'Scion',
+  'Smart',
+  'SRT',
+  'Subaru',
+  'Suzuki',
+  'Tesla',
+  'Toyota',
+  'Volkswagen',
+  'Volvo',
+  'Yugo',
+];
+
+module.exports = { currentYear, minimumYear, yearsArray, makersArray };

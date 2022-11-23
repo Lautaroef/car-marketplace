@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.edfe50e9.css",
+    "main.js": "/static/js/main.79cc9519.js",
+    "static/media/white-couple-with-key.png": "/static/media/white-couple-with-key.228830610cd1bf579a06.png",
+    "static/media/white-driver.png": "/static/media/white-driver.b373bd6f099c021af5eb.png",
+    "static/media/bulb-fa.svg": "/static/media/bulb-fa.b7c1d8e5b73cd77ed6873f5f39d36ada.svg",
+    "static/media/car-road.jpg": "/static/media/car-road.80471be3e1ecee813c87.jpg",
+    "static/media/noFilter.svg": "/static/media/noFilter.89cfa5e89c49c256da599b2ac927eb94.svg",
+    "static/media/couple-with-sun-behind.jpg": "/static/media/couple-with-sun-behind.052ef8ecd1643ad44ed3.jpg",
+    "static/media/filterSvg.svg": "/static/media/filterSvg.3296173a99eb001d186e92108a3b809b.svg",
+    "static/media/getPaid.jpg": "/static/media/getPaid.e583f41d1e4bbe8766f3.jpg",
+    "static/media/qr.png": "/static/media/qr.9a1beed120c98582fca1.png",
+    "static/media/inspection.jpg": "/static/media/inspection.6115b7ef7fcef574e843.jpg",
+    "static/media/appointment.jpg": "/static/media/appointment.1f898561e530323d0288.jpg",
+    "static/media/noCarsImage.svg": "/static/media/noCarsImage.69f45ef5dab01764f93b6bfe7c977578.svg",
+    "static/media/sell.jpg": "/static/media/sell.75576786e80f8661fb4b.jpg",
+    "static/media/testDrive.svg": "/static/media/testDrive.418dd3d9afaa8b094624766e54dd5891.svg",
+    "static/media/rumrum.png": "/static/media/rumrum.a021463361bca122a2c8.png",
+    "static/media/doorstepDelivery.svg": "/static/media/doorstepDelivery.9d1dcb75cebcf6fb3a73986f92374940.svg",
+    "static/media/findYourCar.svg": "/static/media/findYourCar.b703bffb4227115c8e813bef691ab616.svg",
+    "static/media/purchase.svg": "/static/media/purchase.bb20703e87190a09118bad0e5f7c6376.svg",
+    "static/media/Down Arrow.svg": "/static/media/Down Arrow.779749736663a102625eccc098ee938f.svg",
+    "index.html": "/index.html",
+    "main.edfe50e9.css.map": "/static/css/main.edfe50e9.css.map",
+    "main.79cc9519.js.map": "/static/js/main.79cc9519.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.edfe50e9.css",
+    "static/js/main.79cc9519.js"
+  ]
+}

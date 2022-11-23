@@ -1,0 +1,138 @@
+.how-it-works {
+  margin: 4rem auto;
+  text-align: center;
+
+  h1 {
+    position: relative;
+    font-size: 1.9rem;
+    margin: 1rem auto 1.5rem auto;
+
+    &::before {
+      content: '';
+      position: absolute;
+      margin: auto;
+      top: -33%;
+      left: 0;
+      right: 0;
+      width: 45px;
+      height: 5px;
+      border-radius: 2px;
+      background-color: $--primary-color;
+    }
+  }
+
+  .MuiPaper-root {
+    min-width: 285px;
+    height: 285px;
+    margin: 0 0.8rem;
+    box-shadow: 0 2px 8px rgba(163, 163, 163, 0.25);
+  }
+
+  p {
+    margin-top: 0.2rem;
+    font-size: 0.95rem;
+  }
+
+  .steps-container-wrapper {
+    max-width: clamp(320px, 100%, 1250px);
+    margin: auto;
+    overflow-x: scroll;
+  }
+
+  .steps-container {
+    margin: auto;
+    @include flexCenter(flex-start);
+    text-align: left;
+    transition: all 0.3s ease;
+
+    &::-webkit-scrollbar {
+      height: 15px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: $--bg-gray-light;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $--border-gray;
+      border-radius: 10px;
+    }
+
+    .buy-carousel,
+    .sell-carousel {
+      @include flexCenter();
+      padding: 1rem 0;
+    }
+
+    picture {
+      @include flexCenter();
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.wrapper {
+  margin: 1rem auto 2rem auto;
+
+  nav {
+    position: relative;
+    width: 250px;
+    display: flex;
+    margin: auto;
+
+    .toggle-buy,
+    .toggle-sell {
+      position: relative;
+      height: 100%;
+      width: 200px;
+      padding: 0.4rem 0;
+      cursor: pointer;
+      border-radius: 20px;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      z-index: 1;
+
+      i {
+        padding-right: 7px;
+      }
+
+      span {
+        color: $--primary-color;
+      }
+    }
+
+    .slider {
+      position: absolute;
+      height: 100%;
+      width: 50%;
+      left: 0;
+      bottom: 0;
+      z-index: 0;
+      background: $--primary-button;
+      transition: all 0.3s ease;
+    }
+  }
+  ::selection {
+    background-color: $--primary-button;
+  }
+  input[type='radio'] {
+    display: none;
+  }
+}
+
+#toggle-buy:checked ~ nav label.toggle-buy,
+#toggle-sell:checked ~ nav label.toggle-sell {
+  color: #fff;
+  span {
+    color: $--white;
+  }
+}
+
+#toggle-buy:checked ~ nav .slider {
+  left: 0%;
+  border-radius: 20px;
+}
+#toggle-sell:checked ~ nav .slider {
+  left: 50%;
+  border-radius: 20px;
+}

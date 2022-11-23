@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RumRum cars - Buy & Sell Cars website.
 
-## Getting Started
+### Built using MERN Stack
 
-First, run the development server:
+<div style="display: flex;">
+<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" alt="React" width=50 />
+<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/redux/redux.png" alt="Redux" width=50 />
+<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sass/sass.png" alt="Sass" width=50 />
+<img src="https://pgjones.dev/tozo/frontend/img/material-ui.png" alt="MaterialUI" height=50/>
+<img src="https://infinapps.com/wp-content/uploads/2018/10/mongodb-logo.png" alt="MongoDB" width=55 style="margin-top: 20px;"/>
+<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg" alt="NodeJS" height=50/>
+<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/express/express.png" alt="Express" height=50/>
+<img src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-built_white.png?hl=es-419" alt="Firebase" height=50/> 
+<br/><br/>
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+This website is my first one where i applied **Backend technologies** like MongoDB - Express - NodeJS.<br/>
+In the **Frontend development** i used React and Redux for the state.<br/>
+For **styling** and organizing all the CSS i choosed the Sass preprocessor. Also the MaterialUI library was used for some responsive components.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[**React hook form**](https://react-hook-form.com/ 'React Hook Form website') was used to handle errors on the "Sell a Car" page and for the Firebase authentication form.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Firebase
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+I used the Firebase service to implement **User Authentication** on the website.<br/>
+Also **Firebase hosting** was used to... well.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Image storing on the cloud.
 
-## Learn More
+And for posting and receiving the car images i used [Cloudinary](https://cloudinary.com/ 'Cloudinary website') service.
 
-To learn more about Next.js, take a look at the following resources:
+> At first a system for posting and receiving images was made using only [Multer](https://github.com/expressjs/multer 'Multer website') where the images were stored in a private file on my workspace, but i wanted to improve as this method has some cons in the long run.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### About functionality
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The user can select a car which he likes most, he click on the "Buy this car" button and the delete method is triggered.<br/>
+Also the part i like the most is when you want to sell a car and all the process that is shown until the car is finally uploaded with all it's description and image.
