@@ -15,6 +15,7 @@ storeImagesLocally.js
 /coverage
 
 # production
+.next
 # /build
 
 # misc
