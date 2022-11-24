@@ -1,9 +1,6 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "@next/next/no-html-link-for-pages": [
-      "error",
-      "./components/home/first-impression/index.tsx"
-    ]
+    "@next/next/no-html-link-for-pages": ["error", "./components/home/first-impression"]
   }
 }

@@ -4,9 +4,8 @@ import { useDeleteCarMutation } from 'redux/carsInfo/carsApi';
 import Car from 'components/single-car/car/Main';
 import { Button, CircularProgress } from '@mui/material';
 
-// getStaticPaths
 export async function getStaticPaths() {
-  const res = await fetch('https://rumrum-cars.vercel.app/api/cars'); // https://rumrum-cars.vercel.app/api/cars
+  const res = await fetch('http://localhost:3000/api/cars');
   const data = await res.json();
 
   const paths = data.cars.map((car: Car) => ({
@@ -15,20 +14,18 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true, // can also be true or 'blocking'
+    fallback: 'blocking', // can be true, false or 'blocking'
   };
 }
 
-// getStaticProps
 export async function getStaticProps(context: any) {
-  const res = await fetch(
-    `https://rumrum-cars.vercel.app/api/cars/${context.params.carID}`
-  ); // https://rumrum-cars.vercel.app/api/cars/${context.params.carID}
+  const res = await fetch(`http://localhost:3000/api/cars/${context.params.carID}`);
   const data = await res.json();
 
   return {
     props: {
       car: data.car,
+      success: data.success,
     },
   };
 }

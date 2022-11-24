@@ -13,9 +13,9 @@ import Makers from 'components/buy-a-car/filters/Makers';
 import HorsePower from 'components/buy-a-car/filters/HorsePower';
 import ModalFilter from 'components/buy-a-car/filters/ModalFilter';
 
-// getServersideProps
+// getServerSideProps
 export async function getServerSideProps(context: any) {
-  const res = await fetch('https://rumrum-cars.vercel.app/api/cars'); // https://rumrum-cars.vercel.app/api/cars
+  const res = await fetch('http://localhost:3000/api/cars'); // https://rumrum-cars.vercel.app/api/cars
   const data = await res.json();
 
   return {

@@ -25,7 +25,8 @@ function Main({
   isError,
 }: Props) {
   const router = useRouter();
-  let { year, make, model } = carInfo;
+
+  const { year, make, model } = carInfo;
 
   return (
     <>
