@@ -67,11 +67,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     result = result.skip(skip).limit(Number(limit));
 
     const cars = await result;
+    const nbCars = await Car.countDocuments(queryObject);
 
     res.status(200).send({
       // @ts-ignore
-      nbCars: cars.length, // @ts-ignore
-      cars,
+      cars, // @ts-ignore
+      nbCars,
     });
     /********************** POST **********************/
   } else if (req.method === 'POST') {

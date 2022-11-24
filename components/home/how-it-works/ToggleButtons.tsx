@@ -1,8 +1,8 @@
-function ToggleButtons({
-  setShowBuySteps,
-}: {
+type Props = {
   setShowBuySteps: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+};
+
+function ToggleButtons({ setShowBuySteps }: Props) {
   return (
     <div className='wrapper'>
       <input

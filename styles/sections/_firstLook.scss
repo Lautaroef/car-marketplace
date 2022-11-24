@@ -1,12 +1,14 @@
 .first-look {
   @include flexCenter(unset, unset, column);
 
-  > div {
+  .image-container {
     width: 100%;
-    background-image: url(../images//happyDriver//car-road.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    position: relative;
+
+    img {
+      z-index: -1;
+      max-height: 688px;
+    }
 
     > section {
       @include flexCenter(center, flex-start, column);

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { auth } from './firebaseConfig';
 import { useAppDispatch } from 'redux/hooks';
 import { saveUserCredentials } from 'redux/login/LoginSlice';
@@ -29,14 +29,17 @@ function FirebaseActions() {
   const { email, password } = user;
 
   // Firebase
-  onAuthStateChanged(auth, (currentUser) => {
-    dispatch(
-      saveUserCredentials({
-        username: currentUser?.displayName || currentUser?.email,
-        userIcon: currentUser?.photoURL,
-      })
-    );
-  });
+  useEffect(() => {
+    // new - wrapped this fn in useEffect
+    onAuthStateChanged(auth, (currentUser) => {
+      dispatch(
+        saveUserCredentials({
+          username: currentUser?.displayName || currentUser?.email,
+          userIcon: currentUser?.photoURL,
+        })
+      );
+    });
+  }, []);
 
   // Register
   const register = async () => {

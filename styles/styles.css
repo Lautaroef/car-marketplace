@@ -1444,14 +1444,15 @@
   align-items: unset;
   flex-direction: column;
 }
-.first-look > div {
+.first-look .image-container {
   width: 100%;
-  background-image: url(../images//happyDriver//car-road.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
 }
-.first-look > div > section {
+.first-look .image-container img {
+  z-index: -1;
+  max-height: 688px;
+}
+.first-look .image-container > section {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -1463,59 +1464,59 @@
   padding-left: 4rem;
 }
 @media screen and (max-width: 1024px) {
-  .first-look > div > section {
+  .first-look .image-container > section {
     padding: 0 2rem;
   }
 }
-.first-look > div > section *:not(:last-child) {
+.first-look .image-container > section *:not(:last-child) {
   line-height: 1.7;
 }
-.first-look > div > section h1 {
+.first-look .image-container > section h1 {
   font-size: 2.85rem;
   font-weight: 900;
   color: #fff;
   text-shadow: 1px 0 2px rgba(0, 0, 0, 0.5), 0 0 8px rgba(0, 0, 0, 0.35);
 }
-.first-look > div > section h2 {
+.first-look .image-container > section h2 {
   font-size: 2.15rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   color: #fff;
   text-shadow: 1px 0 2px rgba(0, 0, 0, 0.5), 0 0 8px rgba(0, 0, 0, 0.35);
 }
-.first-look > div > section h2::after {
+.first-look .image-container > section h2::after {
   content: "easy!";
   color: #f47920;
   margin-left: 0.5rem;
   text-shadow: none;
 }
-.first-look > div > section h4 {
+.first-look .image-container > section h4 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.25rem;
   color: #fff;
   text-shadow: 1px 0 2px rgba(0, 0, 0, 0.5), 0 0 8px rgba(0, 0, 0, 0.35);
 }
-.first-look > div > section .buy-sell-buttons {
+.first-look .image-container > section .buy-sell-buttons {
   display: flex;
   justify-content: center;
   align-items: stretch;
   flex-direction: row;
 }
 @media screen and (max-width: 576px) {
-  .first-look > div > section .buy-sell-buttons {
+  .first-look .image-container > section .buy-sell-buttons {
     display: flex;
     justify-content: unset;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .first-look > div > section .buy-sell-buttons button {
+  .first-look .image-container > section .buy-sell-buttons button {
     width: 100%;
     margin: 0.2rem;
   }
 }
-.first-look > div > section .buy-sell-buttons button {
+.first-look .image-container > section .buy-sell-buttons button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1536,15 +1537,15 @@
   margin-right: 0.5rem;
   font-weight: 700;
 }
-.first-look > div > section .buy-sell-buttons button:hover {
+.first-look .image-container > section .buy-sell-buttons button:hover {
   background-color: #ef6b0c;
   border-color: #ef6b0c;
 }
-.first-look > div > section .buy-sell-buttons button i {
+.first-look .image-container > section .buy-sell-buttons button i {
   margin-left: 1rem;
   font-size: 1.65rem;
 }
-.first-look > div > section .buy-sell-buttons button a {
+.first-look .image-container > section .buy-sell-buttons button a {
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -1590,29 +1591,26 @@
   font-size: 0.95rem;
 }
 .how-it-works .steps-container-wrapper {
-  max-width: clamp(320px, 100%, 1250px);
-  margin: auto;
-  overflow-x: scroll;
-}
-.how-it-works .steps-container {
-  margin: auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
+  max-width: clamp(320px, 100%, 1250px);
+  margin: auto;
   text-align: left;
   transition: all 0.3s ease;
+  overflow-x: scroll;
 }
-.how-it-works .steps-container .buy-carousel,
-.how-it-works .steps-container .sell-carousel {
+.how-it-works .steps-container-wrapper .buy-carousel,
+.how-it-works .steps-container-wrapper .sell-carousel {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   padding: 1rem 0;
 }
-.how-it-works .steps-container .buy-carousel picture,
-.how-it-works .steps-container .sell-carousel picture {
+.how-it-works .steps-container-wrapper .buy-carousel picture,
+.how-it-works .steps-container-wrapper .sell-carousel picture {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1620,13 +1618,13 @@
   position: relative;
   height: 142px;
 }
-.how-it-works .steps-container::-webkit-scrollbar {
+.how-it-works .steps-container-wrapper::-webkit-scrollbar {
   height: 15px;
 }
-.how-it-works .steps-container::-webkit-scrollbar-track {
+.how-it-works .steps-container-wrapper::-webkit-scrollbar-track {
   background-color: #f8f8f8;
 }
-.how-it-works .steps-container::-webkit-scrollbar-thumb {
+.how-it-works .steps-container-wrapper::-webkit-scrollbar-thumb {
   background-color: #e1e4e8;
   border-radius: 10px;
 }

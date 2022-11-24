@@ -34,16 +34,12 @@
   }
 
   .steps-container-wrapper {
+    @include flexCenter(flex-start);
     max-width: clamp(320px, 100%, 1250px);
     margin: auto;
-    overflow-x: scroll;
-  }
-
-  .steps-container {
-    margin: auto;
-    @include flexCenter(flex-start);
     text-align: left;
     transition: all 0.3s ease;
+    overflow-x: scroll;
 
     .buy-carousel,
     .sell-carousel {

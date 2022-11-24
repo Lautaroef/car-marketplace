@@ -1,19 +1,42 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { useGetCarMutation, useDeleteCarMutation } from 'redux/carsInfo/carsApi';
+import { useDeleteCarMutation } from 'redux/carsInfo/carsApi';
 import Car from 'components/single-car/car/Main';
-import Button from '@mui/material/Button';
-import CircularProgress from '@mui/material/CircularProgress';
+import { Button, CircularProgress } from '@mui/material';
 
-function Main() {
+// getStaticPaths
+export async function getStaticPaths() {
+  const res = await fetch('http://localhost:3000/api/cars'); // https://rumrum-cars.vercel.app/api/cars
+  const data = await res.json();
+
+  const paths = data.cars.map((car: Car) => ({
+    params: { carID: car._id },
+  }));
+
+  return {
+    paths,
+    fallback: true, // can also be true or 'blocking'
+  };
+}
+
+// getStaticProps
+export async function getStaticProps(context: any) {
+  const res = await fetch(`http://localhost:3000/api/cars/${context.params.carID}`); // https://rumrum-cars.vercel.app/api/cars/${context.params.carID}
+  const data = await res.json();
+
+  return {
+    props: {
+      car: data.car,
+    },
+  };
+}
+
+function Main({ car }: { car: Car }) {
   const [showPaymentMethods, setShowPaymentMethods] = useState<boolean>(false);
-  const [getCar, { data: { car = {} } = {} }] = useGetCarMutation();
   const [deleteCar, { isLoading, isSuccess, isError }] = useDeleteCarMutation();
-  const { carID } = useRouter().query;
+  const router = useRouter();
+  const carID = router.query.carID;
 
-  useEffect(() => {
-    getCar(carID);
-  }, []);
   const handleBuyCar = () => {
     setShowPaymentMethods(!showPaymentMethods);
     deleteCar(carID);
@@ -34,7 +57,8 @@ function Main() {
             showPaymentMethods={showPaymentMethods}
             setShowPaymentMethods={setShowPaymentMethods}
           />
-          <Button
+          {/* Delete car 👇 */}
+          {/* <Button
             disableElevation
             variant='contained'
             className='buy-button'
@@ -42,7 +66,7 @@ function Main() {
             onClick={handleBuyCar}
           >
             {isLoading ? <CircularProgress size='1.5rem' /> : 'Buy car'}
-          </Button>
+          </Button> */}
         </>
       )}
     </section>

@@ -1,9 +1,9 @@
-import { initializeApp } from 'firebase/app';
+import { FirebaseOptions, initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
-const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_AUTH_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+const firebaseConfig: FirebaseOptions = {
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_AUTH_API_KEY, // NEXT_PUBLIC prefix is required otherwise it will not be available in the browser
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.FIREBASE_AUTH_PROJECT_ID,
   storageBucket: process.env.FIREBASE_AUTH_STORAGE_BUCKET,
   messagingSenderId: process.env.FIREBASE_AUTH_MESSAGING_SENDER_ID,

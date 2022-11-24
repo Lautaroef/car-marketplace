@@ -9,12 +9,14 @@ import FirebaseModal from '../firebase/Main';
 import UsernameAndPhoto from '../firebase/UsernameAndPhoto';
 import LoginAndRegisterButtons from './LoginAndRegisterButtons';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 function Navbar() {
   const isModalOpen = useAppSelector((state) => state.loginValues.isModalOpen);
   const { username: serverUsername, userIcon } = useAppSelector(
     (state) => state.loginValues.userCredentials
   );
+  const router = useRouter();
   const windowXSize = useWindowSize();
   const dispatch = useAppDispatch();
 
@@ -22,6 +24,9 @@ function Navbar() {
   const [username, setUsername] = useState<string | null>(null);
   useEffect(() => {
     setUsername(serverUsername);
+    if (username) {
+      router.refresh();
+    }
   }, []);
   //
 
@@ -36,7 +41,7 @@ function Navbar() {
     { title: 'Our Team', to: '/our-team' },
     { title: 'Contact', to: '/contact' },
   ];
-  console.log(username);
+
   return (
     <div className='infinite-navbar'>
       {isModalOpen ? <FirebaseModal /> : null}
@@ -56,7 +61,7 @@ function Navbar() {
           })}
         </ul>
 
-        {username ? (
+        {username && userIcon ? (
           <UsernameAndPhoto
             username={username}
             userIcon={userIcon}

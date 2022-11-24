@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import carRoad from 'images/car-road.jpg';
 import scrollDownImg from 'images/logos/Down Arrow.svg';
 
 function FirstLook() {
   return (
     <div className='first-look'>
-      <div>
+      <div className='image-container'>
+        <Image fill src={carRoad} alt='RumRum cars' />
         <section>
           <h1>Buy or Sell a car</h1>
           <h2>we make it</h2>
@@ -24,8 +26,8 @@ function FirstLook() {
           </div>
         </section>
       </div>
-      <a href='/#bottom' className='center-image'>
-        <Image src={scrollDownImg} alt='Scroll Down' priority />
+      <a href='/#how-it-works' className='center-image'>
+        <Image src={scrollDownImg} alt='Scroll Down' width={35} height={37} />
       </a>
     </div>
   );

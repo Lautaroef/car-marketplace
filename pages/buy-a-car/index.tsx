@@ -5,6 +5,7 @@ import { useGetCarsQuery } from 'redux/carsInfo/carsApi';
 import Cars from 'components/buy-a-car/cars/Main';
 import Header from 'components/buy-a-car/search-bar/Main';
 import LinearProgress from '@mui/material/LinearProgress';
+import Loading from 'components/other/loading-feedback/LoadingSkeleton';
 // Filters
 import Price from 'components/buy-a-car/filters/Price';
 import Years from 'components/buy-a-car/filters/Years';
@@ -12,7 +13,27 @@ import Makers from 'components/buy-a-car/filters/Makers';
 import HorsePower from 'components/buy-a-car/filters/HorsePower';
 import ModalFilter from 'components/buy-a-car/filters/ModalFilter';
 
-function Main() {
+// getServersideProps
+export async function getServerSideProps(context: any) {
+  const res = await fetch('http://localhost:3000/api/cars'); // https://rumrum-cars.vercel.app/api/cars
+  const data = await res.json();
+
+  return {
+    props: {
+      cars: data.cars,
+      nbCars: data.nbCars,
+    },
+  };
+}
+
+function Main({ cars, nbCars }: { cars: Car[]; nbCars: number }) {
+  const [filteredCars, setFilteredCars] = useState<{
+    cars: Car[];
+    nbCars: number;
+  }>({
+    cars,
+    nbCars,
+  });
   const [openFilterModal, setOpenFilterModal] = useState<boolean>(false);
   const {
     searchValue,
@@ -37,16 +58,8 @@ function Main() {
   };
 
   let searchParams = new URLSearchParams(urlParams);
+
   // every time the url changes, update the query params
-  // Tried making this but provokes an infinite loop
-  /*
-  useEffect(() => {
-    router.push({
-      pathname: '/buy-a-car',
-      query: urlParams,
-    });
-   }, [urlParams]);  
-  */
   useEffect(() => {
     if (queries.make) {
       urlParams.make = queries.make as string;
@@ -80,16 +93,13 @@ function Main() {
     }
   }, [queries]);
 
-  const {
-    data: { cars = [], nbCars = 0 } = {},
-    isLoading,
-    isFetching,
-  } = useGetCarsQuery(searchParams.toString());
+  const { data, isLoading, isFetching } = useGetCarsQuery(searchParams.toString());
 
-  // history.push({
-  //   pathname: '/buy-a-car',
-  //   search: searchParams.toString(),
-  // });
+  useEffect(() => {
+    if (data && data.cars) {
+      setFilteredCars(data);
+    }
+  }, [data]);
 
   const LoadingProgressStyles = { width: '100%', height: '4px', mb: 2 };
 
@@ -114,12 +124,15 @@ function Main() {
                 <HorsePower />
               </form>
               <div className='cars-sidebar'>
-                <Cars
-                  cars={cars}
-                  nbCars={nbCars}
-                  isLoading={isLoading}
-                  setOpenFilterModal={setOpenFilterModal}
-                />
+                {isLoading ? (
+                  <Loading />
+                ) : (
+                  <Cars
+                    cars={filteredCars.cars}
+                    nbCars={filteredCars.nbCars}
+                    setOpenFilterModal={setOpenFilterModal}
+                  />
+                )}
               </div>
             </div>
           </main>
