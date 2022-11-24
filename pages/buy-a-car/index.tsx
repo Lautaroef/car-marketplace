@@ -15,7 +15,7 @@ import ModalFilter from 'components/buy-a-car/filters/ModalFilter';
 
 // getServersideProps
 export async function getServerSideProps(context: any) {
-  const res = await fetch('/api/cars'); // https://rumrum-cars.vercel.app/api/cars
+  const res = await fetch('https://rumrum-cars.vercel.app/api/cars'); // https://rumrum-cars.vercel.app/api/cars
   const data = await res.json();
 
   return {

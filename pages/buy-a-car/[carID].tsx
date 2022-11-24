@@ -6,7 +6,7 @@ import { Button, CircularProgress } from '@mui/material';
 
 // getStaticPaths
 export async function getStaticPaths() {
-  const res = await fetch('/api/cars'); // https://rumrum-cars.vercel.app/api/cars
+  const res = await fetch('https://rumrum-cars.vercel.app/api/cars'); // https://rumrum-cars.vercel.app/api/cars
   const data = await res.json();
 
   const paths = data.cars.map((car: Car) => ({
@@ -21,7 +21,9 @@ export async function getStaticPaths() {
 
 // getStaticProps
 export async function getStaticProps(context: any) {
-  const res = await fetch(`/api/cars/${context.params.carID}`); // https://rumrum-cars.vercel.app/api/cars/${context.params.carID}
+  const res = await fetch(
+    `https://rumrum-cars.vercel.app/api/cars/${context.params.carID}`
+  ); // https://rumrum-cars.vercel.app/api/cars/${context.params.carID}
   const data = await res.json();
 
   return {
