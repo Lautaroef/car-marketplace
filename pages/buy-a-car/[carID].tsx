@@ -8,7 +8,7 @@ export async function getStaticPaths({ req }: any) {
   const protocol = req.headers['x-forwarded-proto'] || 'http';
   const baseUrl = req ? `${protocol}://${req.headers.host}` : '';
 
-  const res = await fetch('/api/cars');
+  const res = await fetch(baseUrl + '/api/cars');
   const data = await res.json();
 
   const paths = data.cars.map((car: Car) => ({
@@ -25,7 +25,7 @@ export async function getStaticProps({ req, params }: any) {
   const protocol = req.headers['x-forwarded-proto'] || 'http';
   const baseUrl = req ? `${protocol}://${req.headers.host}` : '';
 
-  const res = await fetch(`/api/cars/${params.carID}`);
+  const res = await fetch(baseUrl + `/api/cars/${params.carID}`);
   const data = await res.json();
 
   return {
