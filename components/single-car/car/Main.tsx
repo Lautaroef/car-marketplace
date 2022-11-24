@@ -6,7 +6,7 @@ import ErrorAlert from 'components/other/loading-feedback/ErrorAlert';
 import SuccessAlert from 'components/other/loading-feedback/SuccessAlert';
 
 type Props = {
-  carInfo: any;
+  car: any;
   isError: boolean;
   isSuccess: boolean;
   isLoading: boolean;
@@ -16,7 +16,7 @@ type Props = {
 };
 
 function Main({
-  carInfo,
+  car,
   handleBuyCar,
   showPaymentMethods,
   setShowPaymentMethods,
@@ -25,8 +25,6 @@ function Main({
   isError,
 }: Props) {
   const router = useRouter();
-
-  const { year, make, model } = carInfo;
 
   return (
     <>
@@ -39,13 +37,13 @@ function Main({
             <i className='fas fa-caret-left' /> Back to previous search
           </button>
           <h1>
-            {year} {make} {model}
+            {car?.year} {car?.make} {car?.model}
           </h1>
         </div>
         <main>
-          <ImageAndDetails {...carInfo} />
+          <ImageAndDetails {...car} />
           <RightSideInfo
-            carInfo={carInfo}
+            car={car}
             isLoading={isLoading}
             handleBuyCar={handleBuyCar}
             showPaymentMethods={showPaymentMethods}
@@ -55,7 +53,7 @@ function Main({
       </div>
       {/* Alerts feedback */}
       <SuccessAlert isSuccess={isSuccess}>
-        Your purchase for the car {make}, {model} was made successfully
+        Your purchase for the car {car.make}, {car.model} was made successfully
       </SuccessAlert>
       <ErrorAlert isError={isError}>
         Something went wrong from the server, please try later

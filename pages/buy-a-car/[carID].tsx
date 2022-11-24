@@ -46,7 +46,7 @@ function Main({ car }: { car: Car }) {
       ) : (
         <>
           <Car
-            carInfo={car}
+            car={car}
             isError={isError}
             isSuccess={isSuccess}
             isLoading={isLoading}

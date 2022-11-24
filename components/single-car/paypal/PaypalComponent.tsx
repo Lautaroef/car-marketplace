@@ -7,14 +7,14 @@ import {
 } from '@paypal/react-paypal-js';
 
 type Props = {
-  carInfo: Car;
+  car: Car;
   newCurrency: Currencies;
   setCurrency: React.Dispatch<React.SetStateAction<Currencies>>;
 };
-function PaypalComponent({ carInfo, newCurrency, setCurrency }: Props) {
+function PaypalComponent({ car, newCurrency, setCurrency }: Props) {
   const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
   const paypalElement = useRef<HTMLDivElement>(null);
-  const { make, model, price } = carInfo;
+  const { make, model, price } = car;
 
   const onCurrencyChange = (e: any) => {
     const target = e.target as HTMLInputElement;

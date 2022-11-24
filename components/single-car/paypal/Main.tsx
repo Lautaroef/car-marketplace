@@ -3,10 +3,10 @@ import PaypalComponent from './PaypalComponent';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 type Props = {
-  carInfo: Car;
+  car: Car;
 };
 
-function Main({ carInfo }: Props) {
+function Main({ car }: Props) {
   const [newCurrency, setNewCurrency] = useState<Currencies>('USD');
   console.log(newCurrency);
 
@@ -19,11 +19,7 @@ function Main({ carInfo }: Props) {
 
   return (
     <PayPalScriptProvider options={initialPaypalOptions}>
-      <PaypalComponent
-        carInfo={carInfo}
-        newCurrency={newCurrency}
-        setCurrency={setNewCurrency}
-      />
+      <PaypalComponent car={car} newCurrency={newCurrency} setCurrency={setNewCurrency} />
     </PayPalScriptProvider>
   );
 }

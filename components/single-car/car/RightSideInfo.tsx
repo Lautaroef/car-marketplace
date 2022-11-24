@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import numberWithSeparator from 'functions/numberWithSeparator';
 
 type Props = {
-  carInfo: Car;
+  car: Car;
   isLoading: boolean;
   handleBuyCar: () => void;
   showPaymentMethods: boolean;
@@ -11,14 +11,13 @@ type Props = {
 };
 
 function RightSideBoxes({
-  carInfo,
+  car,
   handleBuyCar,
   isLoading,
   showPaymentMethods,
   setShowPaymentMethods,
 }: Props) {
-  const { year, price, model, make } = carInfo;
-  const prettyPrice = numberWithSeparator(price, '.');
+  const prettyPrice = numberWithSeparator(car?.price, '.');
 
   return (
     <div className='right-side-boxes'>
@@ -31,10 +30,10 @@ function RightSideBoxes({
           </div>
         </div>
         <span>
-          {year} - {5450} miles
+          {car?.year} - {5450} miles
         </span>
         <span style={{ textTransform: 'capitalize' }}>
-          {make} {model}
+          {car?.make} {car?.model}
         </span>
       </div>
       <div className='vendor-info'>
@@ -65,7 +64,7 @@ function RightSideBoxes({
       >
         Buy Car
       </Button>
-      {showPaymentMethods && <Paypal carInfo={carInfo} />}
+      {showPaymentMethods && <Paypal car={car} />}
     </div>
   );
 }
