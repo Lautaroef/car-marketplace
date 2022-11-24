@@ -53,7 +53,7 @@ function Main({
       </div>
       {/* Alerts feedback */}
       <SuccessAlert isSuccess={isSuccess}>
-        Your purchase for the car {car.make}, {car.model} was made successfully
+        Your purchase for the car {car?.make}, {car?.model} was made successfully
       </SuccessAlert>
       <ErrorAlert isError={isError}>
         Something went wrong from the server, please try later
