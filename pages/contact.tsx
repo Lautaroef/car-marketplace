@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import qrImage from 'images/logos/qr.png';
 
-function index() {
+function Index() {
   return (
     <section className='contact'>
       <h1>Contact Us</h1>
@@ -41,7 +41,8 @@ function index() {
           <span />
           <h4>RumRumCars - Office</h4>
           <p>
-            The lorem ipsus is a nice way to fill space so i don't think too much here.
+            The lorem ipsus is a nice way to fill space so i don&apos;t think too much
+            here.
           </p>
           <a href='tel:+54-525-436-5200'>+54-525-436-5200</a>
         </div>
@@ -50,4 +51,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

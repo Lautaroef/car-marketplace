@@ -2,8 +2,8 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBBIaNqjuu7QkTAMVDRHwzAutjjnHSOh3Q',
-  authDomain: 'rumrumcars-a9207.firebaseapp.com',
+  apiKey: process.env.REACT_APP_FIREBASE_AUTH_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.FIREBASE_AUTH_PROJECT_ID,
   storageBucket: process.env.FIREBASE_AUTH_STORAGE_BUCKET,
   messagingSenderId: process.env.FIREBASE_AUTH_MESSAGING_SENDER_ID,

@@ -164,7 +164,7 @@ function Modal({
               Login with Google
             </Button>
             <DialogContentText fontSize={'small'}>
-              By doing this, I agree to RumRumCars's <span>Terms</span> and
+              By doing this, I agree to RumRumCars&apos;s <span>Terms</span> and
               <span> Privacy Policy</span>
             </DialogContentText>
           </DialogContent>

@@ -60,7 +60,7 @@ function Cars({ cars, nbCars, isLoading, setOpenFilterModal }: Props) {
                 <div>
                   <FontAwesomeIcon icon={faCircleInfo} />
                   <div style={{ fontWeight: '800' }}>
-                    We couldn't find cars that match your search criteria.
+                    We couldn&apos;t find cars that match your search criteria.
                   </div>
                   <div>Try changing your search criteria or remove filters.</div>
                 </div>

@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import { useAppSelector } from 'redux/hooks';
 import { useGetCarsQuery } from 'redux/carsInfo/carsApi';
-import history from 'history/browser';
 import Cars from 'components/buy-a-car/cars/Main';
 import Header from 'components/buy-a-car/search-bar/Main';
 import LinearProgress from '@mui/material/LinearProgress';
@@ -20,6 +20,8 @@ function Main() {
     sortBySelectedOption,
     currentPage,
   } = useAppSelector((state) => state.filtersValues);
+  const router = useRouter();
+  const queries = router.query;
 
   let urlParams = {
     make: makers,
@@ -33,18 +35,61 @@ function Main() {
     sort: sortBySelectedOption,
     page: currentPage.toString(),
   };
+
   let searchParams = new URLSearchParams(urlParams);
-  history.push({
-    pathname: '/buy-a-car',
-    search: searchParams.toString(),
-  });
-  const queryString = history.location.search;
+  // every time the url changes, update the query params
+  // Tried making this but provokes an infinite loop
+  /*
+  useEffect(() => {
+    router.push({
+      pathname: '/buy-a-car',
+      query: urlParams,
+    });
+   }, [urlParams]);  
+  */
+  useEffect(() => {
+    if (queries.make) {
+      urlParams.make = queries.make as string;
+    }
+    if (queries.model) {
+      urlParams.model = queries.model as string;
+    }
+    if (queries.minYear) {
+      urlParams.minYear = queries.minYear as string;
+    }
+    if (queries.maxYear) {
+      urlParams.maxYear = queries.maxYear as string;
+    }
+    if (queries.minPrice) {
+      urlParams.minPrice = queries.minPrice as string;
+    }
+    if (queries.maxPrice) {
+      urlParams.maxPrice = queries.maxPrice as string;
+    }
+    if (queries.minHorsepower) {
+      urlParams.minHorsepower = queries.minHorsepower as string;
+    }
+    if (queries.maxHorsepower) {
+      urlParams.maxHorsepower = queries.maxHorsepower as string;
+    }
+    if (queries.sort) {
+      urlParams.sort = queries.sort as string;
+    }
+    if (queries.page) {
+      urlParams.page = queries.page as string;
+    }
+  }, [queries]);
 
   const {
     data: { cars = [], nbCars = 0 } = {},
     isLoading,
     isFetching,
-  } = useGetCarsQuery(queryString);
+  } = useGetCarsQuery(searchParams.toString());
+
+  // history.push({
+  //   pathname: '/buy-a-car',
+  //   search: searchParams.toString(),
+  // });
 
   const LoadingProgressStyles = { width: '100%', height: '4px', mb: 2 };
 

@@ -4,7 +4,7 @@ import logo from 'images/logos/rumrumglobe.jpg';
 import happyDriver1 from 'images/happyDriver/white-driver.png';
 import happyDriver0 from 'images/happyDriver/white-couple-with-key.png';
 
-function index() {
+function Index() {
   return (
     <section className='our-team'>
       <h1>About Us</h1>
@@ -109,4 +109,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

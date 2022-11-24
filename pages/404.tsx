@@ -2,7 +2,7 @@ import { useRouter } from 'next/navigation';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
-function index() {
+function Index() {
   const router = useRouter();
   return (
     <Box component={'section'} sx={{ textAlign: 'center', mt: '2rem' }}>
@@ -10,7 +10,7 @@ function index() {
       <Button
         variant='contained'
         sx={{ backgroundColor: '#075aff' }}
-        onClick={() => router.back()}
+        onClick={() => router?.back()}
       >
         Back to previous page
       </Button>
@@ -18,4 +18,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
