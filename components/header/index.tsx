@@ -61,7 +61,7 @@ function Navbar() {
           })}
         </ul>
 
-        {username && userIcon ? (
+        {username ? (
           <UsernameAndPhoto
             username={username}
             userIcon={userIcon}
