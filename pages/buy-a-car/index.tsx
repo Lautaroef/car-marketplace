@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useAppSelector } from 'redux/hooks';
 import { useGetCarsQuery } from 'redux/carsInfo/carsApi';
+import { getCars } from 'server/controllers/cars';
 import Cars from 'components/buy-a-car/cars/Main';
 import Header from 'components/buy-a-car/search-bar/Main';
 import LinearProgress from '@mui/material/LinearProgress';
@@ -14,17 +15,12 @@ import HorsePower from 'components/buy-a-car/filters/HorsePower';
 import ModalFilter from 'components/buy-a-car/filters/ModalFilter';
 
 // getServerSideProps
-export async function getServerSideProps({ req }: any) {
-  const protocol = req.headers['x-forwarded-proto'] || 'http';
-  const baseUrl = req ? `${protocol}://${req.headers.host}` : '';
-
-  const res = await fetch(baseUrl + '/api/cars'); // https://rumrum-cars.vercel.app/api/cars
-  const data = await res.json();
+export async function getServerSideProps() {
+  const cars = await getCars();
 
   return {
     props: {
-      cars: data.cars,
-      nbCars: data.nbCars,
+      cars: JSON.parse(JSON.stringify(cars)),
     },
   };
 }

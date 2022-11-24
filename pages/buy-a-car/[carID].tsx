@@ -2,37 +2,29 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useDeleteCarMutation } from 'redux/carsInfo/carsApi';
 import Car from 'components/single-car/car/Main';
+import { getCar, getCars } from 'server/controllers/cars';
 import { Button, CircularProgress } from '@mui/material';
 
-export async function getStaticPaths({ req }: any) {
-  const protocol = req.headers['x-forwarded-proto'] || 'http';
-  const baseUrl = req ? `${protocol}://${req.headers.host}` : '';
+export async function getStaticProps({ params }: any) {
+  const car = await getCar(params.carID);
 
-  const res = await fetch(baseUrl + '/api/cars');
-  const data = await res.json();
+  return {
+    props: {
+      car: JSON.parse(JSON.stringify(car)),
+    },
+  };
+}
 
-  const paths = data.cars.map((car: Car) => ({
-    params: { carID: car._id },
+export async function getStaticPaths() {
+  const cars = await getCars();
+
+  const paths = cars.map((car: Car) => ({
+    params: { carID: car._id.toString() },
   }));
 
   return {
     paths,
-    fallback: 'blocking', // can be true, false or 'blocking'
-  };
-}
-
-export async function getStaticProps({ req, params }: any) {
-  const protocol = req.headers['x-forwarded-proto'] || 'http';
-  const baseUrl = req ? `${protocol}://${req.headers.host}` : '';
-
-  const res = await fetch(baseUrl + `/api/cars/${params.carID}`);
-  const data = await res.json();
-
-  return {
-    props: {
-      car: data.car,
-      success: data.success,
-    },
+    fallback: true, // "blocking"
   };
 }
 
