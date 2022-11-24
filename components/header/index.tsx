@@ -27,7 +27,7 @@ function Navbar() {
     if (username) {
       router.refresh();
     }
-  }, []);
+  }, [username]);
   //
 
   const handleOpenModal = () => {
