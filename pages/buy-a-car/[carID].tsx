@@ -4,8 +4,11 @@ import { useDeleteCarMutation } from 'redux/carsInfo/carsApi';
 import Car from 'components/single-car/car/Main';
 import { Button, CircularProgress } from '@mui/material';
 
-export async function getStaticPaths() {
-  const res = await fetch('http://localhost:3000/api/cars');
+export async function getStaticPaths({ req }: any) {
+  const protocol = req.headers['x-forwarded-proto'] || 'http';
+  const baseUrl = req ? `${protocol}://${req.headers.host}` : '';
+
+  const res = await fetch('/api/cars');
   const data = await res.json();
 
   const paths = data.cars.map((car: Car) => ({
@@ -18,8 +21,11 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context: any) {
-  const res = await fetch(`http://localhost:3000/api/cars/${context.params.carID}`);
+export async function getStaticProps({ req, params }: any) {
+  const protocol = req.headers['x-forwarded-proto'] || 'http';
+  const baseUrl = req ? `${protocol}://${req.headers.host}` : '';
+
+  const res = await fetch(`/api/cars/${params.carID}`);
   const data = await res.json();
 
   return {

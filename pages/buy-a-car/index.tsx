@@ -14,8 +14,11 @@ import HorsePower from 'components/buy-a-car/filters/HorsePower';
 import ModalFilter from 'components/buy-a-car/filters/ModalFilter';
 
 // getServerSideProps
-export async function getServerSideProps(context: any) {
-  const res = await fetch('http://localhost:3000/api/cars'); // https://rumrum-cars.vercel.app/api/cars
+export async function getServerSideProps({ req }: any) {
+  const protocol = req.headers['x-forwarded-proto'] || 'http';
+  const baseUrl = req ? `${protocol}://${req.headers.host}` : '';
+
+  const res = await fetch(baseUrl + '/api/cars'); // https://rumrum-cars.vercel.app/api/cars
   const data = await res.json();
 
   return {
