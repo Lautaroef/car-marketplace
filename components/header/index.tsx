@@ -22,12 +22,13 @@ function Navbar() {
 
   // Fixed the hydration error by saving the username in state
   const [username, setUsername] = useState<string | null>(null);
+
   useEffect(() => {
     setUsername(serverUsername);
     if (username) {
       router.refresh();
     }
-  }, [username]);
+  }, []);
   //
 
   const handleOpenModal = () => {
