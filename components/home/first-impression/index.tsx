@@ -26,9 +26,9 @@ function FirstLook() {
           </div>
         </section>
       </div>
-      <a href='/#how-it-works' className='center-image'>
+      <Link href='/#how-it-works' className='center-image'>
         <Image src={scrollDownImg} alt='Scroll Down' width={35} height={37} />
-      </a>
+      </Link>
     </div>
   );
 }
