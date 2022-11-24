@@ -1,5 +1,5 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
+import dbConnect from 'server/db/connect';
 import Car from 'server/models/car';
 import cloudinary from 'server/utils/cloudinary';
 
@@ -8,10 +8,18 @@ type Data = {
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+  await dbConnect();
   /********************** GET **********************/
   if (req.method === 'GET') {
-    console.log('Server:', req.query);
-    const { make, model, sort, page = 1, limit = 25 } = req.query;
+    /*
+    req.query comes like this:
+    {'{"make":"","model":"","minYear":"1995","maxYear":"2022","minPrice":"0","maxPrice":"5000000","minHorsepower":"50","maxHorsepower":"900","sort":"-year","page":"1"}': ''}
+    */
+    // const query = JSON.parse(Object.keys(req.query)[0]);
+    // console.log(query);
+    const query = req.query;
+
+    const { make, model, sort, page = 1, limit = 25 } = query;
     const currentYear = new Date().getFullYear();
     const {
       minYear = 0,
@@ -20,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       maxPrice = Infinity,
       minHorsepower = 0,
       maxHorsepower = Infinity,
-    } = req.query;
+    } = query;
 
     const queryObject: any = {};
     if (make) {
@@ -43,7 +51,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     // https://mongoosejs.com/docs/queries.html
     let result = Car.find(queryObject);
-    console.log(queryObject);
+    console.log('queryObject:', queryObject);
 
     // https://mongoosejs.com/docs/api.html#query_Query-sort
     if (sort) {
@@ -60,7 +68,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     const cars = await result;
 
-    res.status(200).json({
+    res.status(200).send({
       // @ts-ignore
       nbCars: cars.length, // @ts-ignore
       cars,

@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { useAppSelector } from 'redux/hooks';
 import { useGetCarsQuery } from 'redux/carsInfo/carsApi';
+import history from 'history/browser';
 import Cars from 'components/buy-a-car/cars/Main';
 import Header from 'components/buy-a-car/search-bar/Main';
 import LinearProgress from '@mui/material/LinearProgress';
@@ -13,7 +13,6 @@ import HorsePower from 'components/buy-a-car/filters/HorsePower';
 import ModalFilter from 'components/buy-a-car/filters/ModalFilter';
 
 function Main() {
-  const router = useRouter();
   const [openFilterModal, setOpenFilterModal] = useState<boolean>(false);
   const {
     searchValue,
@@ -35,15 +34,11 @@ function Main() {
     page: currentPage.toString(),
   };
   let searchParams = new URLSearchParams(urlParams);
-
-  useEffect(() => {
-    router.push({
-      pathname: '/buy-a-car',
-      query: searchParams.toString(),
-    });
-  }, []);
-
-  const queryString = router.query;
+  history.push({
+    pathname: '/buy-a-car',
+    search: searchParams.toString(),
+  });
+  const queryString = history.location.search;
 
   const {
     data: { cars = [], nbCars = 0 } = {},

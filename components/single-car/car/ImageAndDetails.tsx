@@ -6,7 +6,7 @@ function ImageAndDetails({ img_url, make, model, year }: Car) {
   return (
     <div className='image-and-details'>
       <div className='slider'>
-        <Image src={img_url} alt={'Bugatti'} />
+        <Image fill src={img_url} alt={'Bugatti'} />
       </div>
       <div className='slider-images'>
         <div>📷</div>

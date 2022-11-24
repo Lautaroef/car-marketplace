@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useGetCarMutation, useDeleteCarMutation } from 'redux/carsInfo/carsApi';
 import Car from 'components/single-car/car/Main';
+import Button from '@mui/material/Button';
+import CircularProgress from '@mui/material/CircularProgress';
 
 function Main() {
   const [showPaymentMethods, setShowPaymentMethods] = useState<boolean>(false);
@@ -32,7 +34,7 @@ function Main() {
             showPaymentMethods={showPaymentMethods}
             setShowPaymentMethods={setShowPaymentMethods}
           />
-          {/* <Button
+          <Button
             disableElevation
             variant='contained'
             className='buy-button'
@@ -40,7 +42,7 @@ function Main() {
             onClick={handleBuyCar}
           >
             {isLoading ? <CircularProgress size='1.5rem' /> : 'Buy car'}
-          </Button> */}
+          </Button>
         </>
       )}
     </section>

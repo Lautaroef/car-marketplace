@@ -12,18 +12,18 @@ export const carsApi = createApi({
   refetchOnReconnect: true,
   endpoints: (build) => ({
     getCars: build.query({
-      query: (query) => `${query}`,
+      query: (query) => `?${query}`,
     }),
     getCar: build.mutation({
       query: (carID) => ({
         method: 'GET',
-        url: `/car/${carID}`,
+        url: `/${carID}`,
       }),
     }),
     deleteCar: build.mutation({
       query: (carID) => ({
         method: 'DELETE',
-        url: `/car/${carID}`,
+        url: `/${carID}`,
       }),
     }),
     postCar: build.mutation({

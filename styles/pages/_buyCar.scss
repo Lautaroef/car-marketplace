@@ -41,7 +41,7 @@
 
       .MuiFormControl-root {
         // Search icon
-        i {
+        path {
           width: 1rem;
           font-size: 1.4rem;
           color: $--primary-color;
@@ -234,11 +234,17 @@
 
           .single-car {
             @include flexCenter(center, unset);
+            height: 200px;
             box-shadow: $--md-box-shadow;
             background-color: $--bg-light; // $--bg-input
 
-            img {
+            .single-car-image-container {
+              position: relative;
+              height: 100%;
               width: 300px;
+              img {
+                object-fit: contain;
+              }
             }
 
             .grid-info {
@@ -394,7 +400,7 @@
   .dialog-title {
     display: flex;
     justify-content: space-between;
-    i {
+    .info-icon {
       font-size: 1.5rem;
       color: $--error;
       cursor: pointer;

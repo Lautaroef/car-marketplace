@@ -4,6 +4,7 @@
 
   h1 {
     @include titleAndUnderline();
+    margin-bottom: 1rem;
   }
   p,
   b {
@@ -14,9 +15,13 @@
     @include flexCenter();
     column-gap: 2.25rem;
 
-    img[alt='RumRumCars'] {
+    .image-container {
+      position: relative;
       width: 100%;
-      max-width: 50%;
+      height: 250px;
+      img[alt='RumRumCars'] {
+        object-fit: contain;
+      }
     }
 
     h2 {

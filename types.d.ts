@@ -21,6 +21,11 @@ type FilterOptions = {
   currentPage: number;
 };
 
+type UserCredentials = {
+  username: string;
+  userIcon: string;
+};
+
 type HowItWorksStep = {
   img: string;
   title: string;

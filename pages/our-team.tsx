@@ -23,7 +23,9 @@ function index() {
             that is trusted, convenient and efficient.
           </p>
         </div>
-        <Image src={logo} alt='RumRumCars' />
+        <div className='image-container'>
+          <Image fill src={logo} alt='RumRumCars' />
+        </div>
       </div>
       <div className='our-vision'>
         <h2>Our Vision</h2>
@@ -51,10 +53,14 @@ function index() {
             handled by us.
           </p>
         </div>
-        <Image src={happyDriver0} alt='Happy Driver' />
+        <div className='image-container'>
+          <Image fill src={happyDriver0} alt='Happy Driver' />
+        </div>
       </div>
       <div>
-        <Image src={happyDriver1} alt='Happy Driver' />
+        <div className='image-container'>
+          <Image fill src={happyDriver1} alt='Happy Driver' />
+        </div>
         <div>
           <b>
             In August 2020, we launched ‘The New Way of Buying Cars’, a brand new service

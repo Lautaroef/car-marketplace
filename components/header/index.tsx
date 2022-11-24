@@ -8,14 +8,22 @@ import HamburgerMenu from './HamburgerMenu';
 import FirebaseModal from '../firebase/Main';
 import UsernameAndPhoto from '../firebase/UsernameAndPhoto';
 import LoginAndRegisterButtons from './LoginAndRegisterButtons';
+import { useEffect, useState } from 'react';
 
 function Navbar() {
   const isModalOpen = useAppSelector((state) => state.loginValues.isModalOpen);
-  const { username, userIcon } = useAppSelector(
+  const { username: serverUsername, userIcon } = useAppSelector(
     (state) => state.loginValues.userCredentials
   );
   const windowXSize = useWindowSize();
   const dispatch = useAppDispatch();
+
+  // Fixed the hydration error by saving the username in state
+  const [username, setUsername] = useState<string | null>(null);
+  useEffect(() => {
+    setUsername(serverUsername);
+  }, []);
+  //
 
   const handleOpenModal = () => {
     dispatch(openCloseModal(true));
@@ -28,7 +36,7 @@ function Navbar() {
     { title: 'Our Team', to: '/our-team' },
     { title: 'Contact', to: '/contact' },
   ];
-
+  console.log(username);
   return (
     <div className='infinite-navbar'>
       {isModalOpen ? <FirebaseModal /> : null}
@@ -47,6 +55,7 @@ function Navbar() {
             );
           })}
         </ul>
+
         {username ? (
           <UsernameAndPhoto
             username={username}
@@ -55,7 +64,6 @@ function Navbar() {
           />
         ) : (
           <>
-            {/* Show only userLogo if window X with is smaller than 576 px */}
             {windowXSize && windowXSize < 576 ? (
               <i onClick={handleOpenModal} className='login-icon fas fa-user-circle' />
             ) : (

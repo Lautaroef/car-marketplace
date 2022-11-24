@@ -3,10 +3,7 @@ import loadState from '../localStorage';
 
 type LoginProps = {
   isModalOpen: boolean;
-  userCredentials: {
-    username: string;
-    userIcon: string;
-  };
+  userCredentials: UserCredentials;
 };
 
 const persistedUserCredentials = loadState();

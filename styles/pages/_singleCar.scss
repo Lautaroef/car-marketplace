@@ -27,8 +27,13 @@
 
   .image-and-details {
     width: 66%;
-    img {
+    .slider {
       width: 100%;
+      height: 525px;
+      position: relative;
+      img {
+        object-fit: cover;
+      }
     }
     .car-details {
       margin-top: 0.5rem;
@@ -60,6 +65,7 @@
     .slider-images {
       @include flexCenter(space-between);
       column-gap: 0.5rem;
+      margin-top: 0.25rem;
       margin-bottom: 0.35rem;
 
       div {

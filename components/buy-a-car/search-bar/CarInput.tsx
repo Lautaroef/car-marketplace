@@ -3,6 +3,9 @@ import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 type Props = { searchValueRef: React.RefObject<HTMLInputElement> };
 
 function SoloInput({ searchValueRef }: Props) {
@@ -15,7 +18,7 @@ function SoloInput({ searchValueRef }: Props) {
           endAdornment: (
             <InputAdornment position='end'>
               <IconButton type='submit' sx={{ mt: 0.5 }}>
-                <i className='fas fa-search' />
+                <FontAwesomeIcon icon={faSearch} />
               </IconButton>
             </InputAdornment>
           ),

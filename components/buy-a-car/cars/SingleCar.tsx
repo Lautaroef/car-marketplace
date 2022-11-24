@@ -15,8 +15,8 @@ function SingleCar({ _id, img_url, make, model, price, year }: Car) {
 
   return (
     <div className='single-car'>
-      <Link href={`/buy-a-car/${_id}`}>
-        <Image src={img_url} alt={`${prettyMake}, ${prettyModel}`} />
+      <Link href={`/buy-a-car/${_id}`} className='single-car-image-container'>
+        <Image fill src={img_url} alt={`${prettyMake}, ${prettyModel}`} />
       </Link>
       <div className='grid-info'>
         <h3>

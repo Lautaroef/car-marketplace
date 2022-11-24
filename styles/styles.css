@@ -156,9 +156,6 @@
     row-gap: 1.5rem;
   }
 }
-.footer .logo-socials img {
-  width: 190px;
-}
 .footer .logo-socials .socials {
   display: flex;
   justify-content: center;
@@ -337,9 +334,6 @@
 .login-dialog .auth-google:hover {
   background-color: unset;
 }
-.login-dialog .auth-google img {
-  width: 35px;
-}
 .login-dialog .auth-divider {
   margin: 0.65rem 0;
 }
@@ -396,7 +390,7 @@
 .buy-a-car .infinite-header .header .title-marker i {
   color: #f47920;
 }
-.buy-a-car .infinite-header .header .MuiFormControl-root i {
+.buy-a-car .infinite-header .header .MuiFormControl-root path {
   width: 1rem;
   font-size: 1.4rem;
   color: #f47920;
@@ -593,11 +587,18 @@
   justify-content: center;
   align-items: unset;
   flex-direction: row;
+  height: 200px;
   box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
   background-color: #eeeff8;
 }
-.buy-a-car .cars .results .cars-sidebar .cars-list .single-car img {
+.buy-a-car .cars .results .cars-sidebar .cars-list .single-car .single-car-image-container {
+  position: relative;
+  height: 100%;
   width: 300px;
+}
+.buy-a-car .cars .results .cars-sidebar .cars-list .single-car .single-car-image-container img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .buy-a-car .cars .results .cars-sidebar .cars-list .single-car .grid-info {
   display: grid;
@@ -741,7 +742,7 @@
   display: flex;
   justify-content: space-between;
 }
-.MuiDialog-container .dialog-title i {
+.MuiDialog-container .dialog-title .info-icon {
   font-size: 1.5rem;
   color: #cf0000;
   cursor: pointer;
@@ -815,8 +816,14 @@
 .single-car-page .image-and-details {
   width: 66%;
 }
-.single-car-page .image-and-details img {
+.single-car-page .image-and-details .slider {
   width: 100%;
+  height: 525px;
+  position: relative;
+}
+.single-car-page .image-and-details .slider img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .single-car-page .image-and-details .car-details {
   margin-top: 0.5rem;
@@ -848,6 +855,7 @@
   flex-direction: row;
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
+  margin-top: 0.25rem;
   margin-bottom: 0.35rem;
 }
 .single-car-page .image-and-details .slider-images div {
@@ -1060,7 +1068,6 @@
   flex-direction: row;
 }
 .sell-a-car .form-section .sell-header img[alt=bulb-svg] {
-  width: 1.35rem;
   margin-right: 0.25rem;
 }
 .sell-a-car .form-section form {
@@ -1122,7 +1129,6 @@
   padding: 3.25vh 4.5vw;
   height: calc(100vh - 3.5rem);
   background-color: #eeeff8;
-  overflow-y: scroll;
 }
 @media screen and (max-width: 768px) {
   .sell-a-car .box-shadow {
@@ -1137,9 +1143,15 @@
   box-shadow: rgba(0, 0, 0, 0.14) 0px 12.8px 16px;
   border-radius: 1.25rem;
 }
-.sell-a-car .box-shadow .final-result img {
+.sell-a-car .box-shadow .final-result .image-container {
+  position: relative;
   width: 100%;
+  height: 300px;
   max-width: 100%;
+}
+.sell-a-car .box-shadow .final-result .image-container img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .sell-a-car .box-shadow .final-result > div h2 {
   font-size: 1.75rem;
@@ -1201,6 +1213,7 @@
   margin: 2.5rem auto 0 auto;
   font-size: 2.15rem;
   text-align: center;
+  margin-bottom: 1rem;
 }
 .our-team h1::after {
   content: " ";
@@ -1223,9 +1236,14 @@
   -moz-column-gap: 2.25rem;
        column-gap: 2.25rem;
 }
-.our-team > div img[alt=RumRumCars] {
+.our-team > div .image-container {
+  position: relative;
   width: 100%;
-  max-width: 50%;
+  height: 250px;
+}
+.our-team > div .image-container img[alt=RumRumCars] {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .our-team > div h2 {
   margin-bottom: 1rem;
@@ -1419,9 +1437,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-}
-.contact .contact-items > div .scan-me img {
-  width: 150px;
 }
 .first-look {
   display: flex;

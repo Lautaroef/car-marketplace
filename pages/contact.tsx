@@ -19,7 +19,7 @@ function index() {
           <h3>Chat with us directly</h3>
           <span />
           <div className='scan-me'>
-            <Image src={qrImage} alt='Scan Me' />
+            <Image src={qrImage} alt='Scan Me' width={150} height={150} />
             <div>
               <h4>Whatsapp ID</h4>
               <a href='tel:+496170961709'>+496170961709</a>

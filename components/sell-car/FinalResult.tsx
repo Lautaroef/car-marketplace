@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import numberWithSeparator from 'functions/numberWithSeparator';
+import Image from 'next/image';
 import Accordion from '@mui/material/Accordion';
 import Typography from '@mui/material/Typography';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -12,10 +13,10 @@ type Props = {
   previewSource: string;
 };
 
-type TypePanels = 'panel1' | 'panel2';
+type TypePanels = 'panel1' | 'panel2' | '';
 
 function FinalResult({ carFormInfo, previewSource }: Props) {
-  const [expandenEl, setExpandedEl] = useState<string | false>(false);
+  const [expandenEl, setExpandedEl] = useState<TypePanels>('panel1');
   const {
     make = 'Ford',
     model = 'Raptor',
@@ -24,10 +25,13 @@ function FinalResult({ carFormInfo, previewSource }: Props) {
     price = '70000',
   } = carFormInfo;
 
-  const handleChange =
-    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpandedEl(isExpanded ? panel : false);
-    };
+  const handleChange = (panel: TypePanels) => {
+    if (expandenEl === panel) {
+      setExpandedEl('');
+    } else {
+      setExpandedEl(panel);
+    }
+  };
 
   // To generate random number in retail price range
   const multiply = (multiplyNum: number) => {
@@ -42,7 +46,9 @@ function FinalResult({ carFormInfo, previewSource }: Props) {
         </h2>
         <p>Estimated KBB Private Party Value</p>
         <h1>${numberWithSeparator(price, '.')}</h1>
-        {previewSource && <img src={previewSource} alt={`${make}, ${model}`} />}
+        <div className='image-container'>
+          {previewSource && <Image fill src={previewSource} alt={`${make}, ${model}`} />}
+        </div>
         <div className='grid-estimated-values'>
           <small>Trade-In Value</small>
           <small>Retail Value</small>

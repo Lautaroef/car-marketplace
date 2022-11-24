@@ -1,10 +1,7 @@
 import mongoose from 'mongoose';
 import { makersArray, yearsArray } from './other-schemas';
 
-// Define how i wanna receive the info whenever a user
-// want to make a CRUD operation
-const carsSchema = new mongoose.Schema({
-  // Build a validation system for every type info
+const CarsSchema = new mongoose.Schema({
   make: {
     type: String,
     enum: makersArray,
@@ -36,7 +33,4 @@ const carsSchema = new mongoose.Schema({
   },
 });
 
-// Create a model
-const Car = mongoose.models.Car || mongoose.model('Car', carsSchema);
-
-export default Car;
+export default mongoose.models.Car || mongoose.model('Car', CarsSchema);

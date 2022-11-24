@@ -8,7 +8,7 @@ function Footer() {
   return (
     <div className='footer'>
       <div className='logo-socials'>
-        <Image src={logo} alt='RumRumCars' />
+        <Image src={logo} alt='RumRumCars' width={190} />
 
         <div className='socials'>
           <h4 style={{ marginRight: '0.65rem' }}>Follow us on</h4>

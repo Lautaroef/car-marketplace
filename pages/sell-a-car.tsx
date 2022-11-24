@@ -31,7 +31,7 @@ function Main() {
           <div>
             <h2>Car Details</h2>
             <h4>
-              <Image src={bulbImage} alt='bulb-svg' />
+              <Image src={bulbImage} alt='bulb-svg' width={22} height={17.5} />
               Listing Tips
             </h4>
           </div>

@@ -15,6 +15,9 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 function Makers() {
   const [openDialog, setOpenDialog] = useState<boolean>(false);
   const dispatch = useDispatch();
@@ -75,7 +78,11 @@ function Makers() {
         >
           <DialogTitle id='alert-dialog-title' className='dialog-title'>
             Make
-            <i className='fas fa-times' onClick={() => setOpenDialog(false)} />
+            <FontAwesomeIcon
+              icon={faTimes}
+              className='info-icon'
+              onClick={() => setOpenDialog(false)}
+            />
           </DialogTitle>
 
           <Divider />

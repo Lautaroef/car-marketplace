@@ -1,8 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
+import dbConnect from 'server/db/connect';
 import Car from 'server/models/car';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  await dbConnect();
+
   /********************** GET **********************/
   if (req.method === 'GET') {
     const { carID } = req.query;
@@ -27,7 +30,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         msg: `The id provided (${carID}) does not match with any of the existing cars`,
       });
     }
-
     res.status(200).json({ success: true, car });
   }
 }

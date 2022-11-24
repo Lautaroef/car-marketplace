@@ -10,6 +10,9 @@ import noFilterImg from 'images/logos/noFilter.svg';
 import filterImage from 'images/logos/filterSvg.svg';
 import noCarsImage from 'images/logos/noCarsImage.svg';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+
 type Props = {
   cars: Car[];
   nbCars: number;
@@ -55,7 +58,7 @@ function Cars({ cars, nbCars, isLoading, setOpenFilterModal }: Props) {
             {cars.length === 0 ? (
               <div className='no-cars-available'>
                 <div>
-                  <i className='fa fa-circle-info'></i>
+                  <FontAwesomeIcon icon={faCircleInfo} />
                   <div style={{ fontWeight: '800' }}>
                     We couldn't find cars that match your search criteria.
                   </div>

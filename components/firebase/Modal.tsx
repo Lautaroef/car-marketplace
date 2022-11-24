@@ -160,7 +160,7 @@ function Modal({
             </Button>
             <Divider className='auth-divider'>or</Divider>
             <Button className='auth-google' onClick={signInWithGoogle}>
-              <Image src={googleImg} alt='Google' />
+              <Image src={googleImg} alt='Google' width={35} height={35} />
               Login with Google
             </Button>
             <DialogContentText fontSize={'small'}>

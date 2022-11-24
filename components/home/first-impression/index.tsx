@@ -25,7 +25,7 @@ function FirstLook() {
         </section>
       </div>
       <a href='/#bottom' className='center-image'>
-        <Image src={scrollDownImg} alt='Scroll Down' />
+        <Image src={scrollDownImg} alt='Scroll Down' priority />
       </a>
     </div>
   );
